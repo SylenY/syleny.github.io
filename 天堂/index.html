@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang=zh-CN data-theme="light">
+	
+<script src="/js/plugins/toggleTheme.js"></script>
+
+	<script>
+		setTheme();
+	</script>
+	<head>
+		
+<title>天堂 | SylenY's World</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/headers_icon/logo.webp">
+<link href="/css/plugins/print.css" media="print" rel="stylesheet" />
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="小说,文学,">
+<meta name="description" content="以天下为之笼，则雀无所逃。">
+
+
+
+<script src="/js/plugins/jquery.min.js"></script>
+
+
+<script src="/js/plugins/hljs.min.js"></script>
+
+
+<script src="/js/plugins/init.js"></script>
+
+
+<script src="/js/plugins/hide.js"></script>
+
+
+<script src="/js/plugins/tabs.js"></script>
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+	<meta name="generator" content="Hexo 8.1.2"></head>
+
+	<body>
+		<header class="sticky-header">
+	<nav>
+		<div class="nav-left">
+			<a href="/" class="logo">
+				<img no-lazy src="/images/headers_icon/logo.webp" alt="Quieter">
+			</a>
+			<ul class="breadcrumb" id="breadcrumb"></ul>
+		</div>
+		<div class="nav-right">
+			<ul>
+				
+					<li>
+						<a href="/">
+						  主页
+						</a>
+					</li>
+				
+					<li>
+						<a href="/categories">
+						  类别
+						</a>
+					</li>
+				
+					<li>
+						<a href="/tags">
+						  标签
+						</a>
+					</li>
+				
+					<li>
+						<a href="/archives">
+						  归档
+						</a>
+					</li>
+				
+					<li>
+						<a href="/links">
+						  链接
+						</a>
+					</li>
+				
+					<li>
+						<a href="/about">
+						  关于
+						</a>
+					</li>
+								  
+			</ul>
+		</div>
+		<div class="nav-right-close">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				<path fill="none" d="M0 0h24v24H0z" />
+				<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+			</svg>
+		</div>
+
+		<div class="sidebar">
+    <div class="topo">
+        <p>SylenY's World</p>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories">
+                类别
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags">
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives">
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/links">
+                链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about">
+                关于
+            </a>
+        </li>
+        
+    </ul>
+    <div class="sidebar-footer">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+    <script>
+        $(function() {
+            $('.nav-right-close > svg').click(function() {
+                $('.sidebar').animate({
+                    right: "0"
+                }, 500);
+                $('.shelter').fadeIn("slow");
+            
+                var element = $('.topo');
+                element.addClass('custom-style');
+            
+                var links = null;
+                if ("/images/covers/heaven.tiff") {
+                    links = "/images/covers/heaven.tiff".split(',');
+                } else {
+                    links = "/images/random_top_img/bg.jpg".split(',');
+                }
+            
+                var randomLink = links[Math.floor(Math.random() * links.length)];
+                element.css('background-image', "url('" + randomLink + "')");
+            });
+          
+            $('.shelter').click(function(e) {
+                $('.sidebar').animate({
+                    right: "-100%"
+                }, 500);
+                $('.shelter').fadeOut("slow");
+            });
+        });      
+    </script>
+</div>
+	</nav>
+
+	
+		<div class="header-background"></div>
+	
+
+	<script>
+		const name = 'post';
+		const ul = document.querySelectorAll('.nav-right ul')[0];
+		const lis = ul.querySelectorAll('li');
+
+		if (name == 'home') {
+			lis[0].classList.add('select');
+		} else {
+			for (let i = 0; i < lis.length; i++) {
+				const li = lis[i];
+				const a = li.querySelector('a');
+				if (name === a.href.split('/')[3]) {
+					li.classList.add('select');
+				}
+			}
+		}
+	</script>
+	
+	<script>
+		var element = document.querySelector('.header-background');
+		if(element) {
+			element.classList.add('custom-style');
+			var links = null;
+			if("/images/covers/heaven.tiff")
+			{
+				links = "/images/covers/heaven.tiff".split(',');
+			} else
+			{
+				links = "/images/random_top_img/bg.jpg".split(',');
+			}
+			var randomLink = links[Math.floor(Math.random() * links.length)];
+			element.style.backgroundImage = "url('" + randomLink + "')";
+		}
+	</script>
+
+	
+<script src="/js/plugins/breadcrumb.js"></script>
+
+	<script>
+		var menus_title = [];
+		
+			menus_title.push({home: '主页'});
+		
+			menus_title.push({categories: '类别'});
+		
+			menus_title.push({tags: '标签'});
+		
+			menus_title.push({archives: '归档'});
+		
+			menus_title.push({galleries: '相册'});
+		
+			menus_title.push({links: '链接'});
+		
+			menus_title.push({about: '关于'});
+		
+		
+			
+				postsBreadcrumb(
+					document.getElementById('breadcrumb'),
+					"类别",
+					"/categories",
+					"小说",
+					"/categories/小说"
+				);
+			
+		
+	</script>
+</header>
+
+<div class="main-wrapper">
+    <main class="post">
+        <header class="main-header">
+	
+		
+			
+				
+<link rel="stylesheet" href="/css/plugins/fancybox.css">
+
+				
+<script src="/js/plugins/fancybox.umd.js"></script>
+
+				
+<script src="/js/plugins/fancybox.js"></script>
+
+			
+			<div class="post-header-background-content">
+				<ul class="post-header-tag">
+					
+						
+							<li><a href="/tags/小说"><span>小说</span></a></li>
+						
+							<li><a href="/tags/文学"><span>文学</span></a></li>
+						
+					
+				</ul>
+				
+				<h1>天堂</h1>
+		
+				
+					<div class="post-header-desc">
+						<svg t="1714702231661" class="icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="1154" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="20" height="20">
+						<path
+							d="M778.24 117.76A46.08 46.08 0 0 1 824.32 163.84v430.08c0 8.4992-4.13696 16.01536-10.50624 20.6848l-0.24576 0.2048L587.5712 846.09024a35.84 35.84 0 0 1-61.48096-25.06752v-220.9792a46.08 46.08 0 0 1 46.08-46.08l200.94976-0.02048V168.96h-522.24v686.08H389.12c13.25056 0 24.1664 10.07616 25.47712 22.97856l0.12288 2.62144c0 14.1312-11.4688 25.6-25.6 25.6h-143.36A46.08 46.08 0 0 1 199.68 860.16V163.84A46.08 46.08 0 0 1 245.76 117.76h532.48z m-26.78784 487.38304h-174.16192v178.176l174.16192-178.176z m-45.19936-169.94304a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z m0-122.88a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z"
+							fill="#ffffff" p-id="1155"></path>
+						</svg>
+						<p>以天下为之笼，则雀无所逃。</p>
+					</div>
+				
+		
+				<div class="post-header-info">
+					<svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+					xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+						<path
+							d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+							p-id="2902" fill="#ffffff"></path>
+					</svg>
+					<div class="post-header-info-author">
+						<a href="/about">SylenY</a>
+					</div>
+					
+						<div class="post-header-info-categories">
+							
+								<a href="/categories/小说">小说</a>
+							
+						</div>
+					
+					<time>2025/11/23 00:00:00</time>
+				</div>
+		
+				
+					<div class="post-header-stat">
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" width="20" height="20">
+							<path fill="#FFFFFF" d="M187.2,165.6c0,2.6-2.1,4.7-4.7,4.7H17.5c-2.6,0-4.7-2.1-4.7-4.7s2.1-4.7,4.7-4.7h165.1
+								C185.2,160.9,187.2,163,187.2,165.6z"/>
+							<path fill="#FFFFFF" d="M17.5,29.7c2.6,0,4.7,2.1,4.7,4.7v131.2c0,2.6-2.1,4.7-4.7,4.7s-4.7-2.1-4.7-4.7V34.4
+								C12.8,31.8,14.9,29.7,17.5,29.7z M77.9,91.5c1.8,1.8,1.8,4.8,0,6.6l-39.8,39.8c-1.9,1.8-4.9,1.7-6.6-0.2c-1.7-1.8-1.7-4.6,0-6.4
+								l39.8-39.8C73.1,89.6,76,89.6,77.9,91.5z M169.9,70.2c1.6,2.1,1.1,5-0.9,6.5c0,0,0,0,0,0l-64.2,48.2c-2.1,1.5-5,1.1-6.6-0.9
+								c-1.6-2.1-1.1-5,0.9-6.5c0,0,0,0,0,0l64.2-48.2C165.4,67.7,168.3,68.1,169.9,70.2L169.9,70.2z"/>
+							<path fill="#FFFFFF" d="M104.6,124.5c-1.8,1.8-4.8,1.8-6.6,0L71.6,98.1c-1.8-1.8-1.8-4.8,0-6.6c1.8-1.8,4.8-1.8,6.6,0l26.3,26.3
+								C106.4,119.6,106.4,122.6,104.6,124.5C104.6,124.4,104.6,124.4,104.6,124.5z"/>
+						</svg>
+		
+						
+							
+<script src="/js/plugins/wordCount.js"></script>
+
+							<p class="post-count">文字数：---</p>
+						
+		
+						
+							<p id="busuanzi_container_page_pv" style='display:none;'>阅读数：<span id="busuanzi_value_page_pv"></span></p>
+						
+					</div>
+				
+			</div>
+		
+	
+</header>
+        <div class="post-content article-container">
+            <article class="post-content-info">
+                <p>金黄的日光挥洒着，照见人们千篇一律的脸。</p>
+<p>只出不进的，是名为“起点”的门；千里大地，却不见终章。</p>
+<p>“告别你破旧的躯体，迎接属于灵魂的新生。没有悲苦，没有伤痛，这里是你无限生命的归宿。”起点大楼的外墙上，大气磅礴的字已历经千年，却依旧崭新。一切都那样平静，一切都那样稳定。永恒，是不变的话题。</p>
+<p>“今天又有这么多人。”一个西装革履的年轻面孔向着身旁的中年人说道，“一千年了，没变过。”</p>
+<p>“是啊，却不知几千年后，他们还笑得出来吗？”名为万宁的中年人倍感沧桑地说。</p>
+<p>门口鱼贯而出的人流里，只见为永生而欢呼的面孔，独有静坐起点旁的这两人，神情如此凝重。</p>
+<p>年轻人乃永安，曾与万宁一同开发“天堂”项目。一千年前，该项目已初有成就，二人却在工作台上耗尽了自己的年华。于是，他们成了天堂项目的第一批实践者。天堂项目旨在让逝去的灵魂永享安乐：将死之人丢弃躯体，仅留大脑在营养液和电流的帮助下得到永生，并将意识与全球服务器联通，在“天堂”里享受没有饥饿与疾病，也无痛苦和死亡的生活。千年过去，世界各地的无数项目基地里已然有数千亿人在“天堂”里延续生命。然而，参与“天堂”开发的万、永二人却越来越感觉虚无。</p>
+<p>“我从来没有这么想死过。”永安叹了口气，“原来永恒也是如此难熬的一件事。”</p>
+<p>“唉，这虚幻的牢笼。”万宁怅然若失地说。</p>
+<p>“你知道吗，生命在失去了循环系统后是极其不稳定的。天堂项目提供永生的方式也仅仅是勉强维持大脑的活动而已。所以，一旦系统出现漏洞，一定会导致大脑和系统间负责输入输出的电流紊乱，从而让我们活了一千年的大脑真正死亡。”几年后，在一所毫不引人注目的房子里，万宁如是说道。</p>
+<p>“嗯。”永安点点头，“但为了避免这种情况，当初设计时系统缜密度便极高，一千年里的持续改进更是让 bug 出现的可能进一步降低。”</p>
+<p>“但我们或许可以从系统内部逻辑下手。”万宁若有所思地说，“当初为了提高运行速度，满足后期无限的计算需求，我在设计算法的时候使用了一些特殊的方法。例如，对于不需要的物品，我没有选择直接删除，而是修改他们的位置到世界坐标的原点，这样下一次使用同一物品时就可直接修改位置，从而省去了‘添加’和‘删除’的过程。”</p>
+<p>“那这有什么用呢？”永安疑惑地问。</p>
+<p>“长途旅行列车的算法中，为了防止旅客与列车分离，在系统每一帧的最后，列车会将旅客传送到其内部，从而解决高速运动时坐标计算误差可能带来的问题。我的计划是，乘上一辆无人的列车并离开，并在离开的瞬间将视线远离，如此，列车会因无人观察而被判定为无用物体并被移动到坐标原点，此后列车会将我们传送至其中。这样一来，我们便也位于原点了。‘天堂’的地平线在 y 轴 64 的地方，所以原点在地平线下，我们的脚下，就将是无尽的虚空。我们会逐渐掉落，直至系统无法处理的极低点，这样系统就会产生错误，我们就能够解脱了！”万宁说着，脸上洋溢着兴奋。</p>
+<p>“就这么干！”永安脸涨的通红，比当初进入‘ 天堂’，获得永生时更加激动，“快，赶紧出发，我一秒钟也不想待在这虚无的世界里了！”</p>
+<p>两人兴奋地走出门去，高声谈笑着，不料一位不速之客挡住了去路：“二位先生可是要毁掉天堂？”</p>
+<p>两人一愣，随即明白了：方才的谈话，隔墙有耳！</p>
+<p>永安先开了口：“我们并非要摧毁，只是试图离开。”</p>
+<p>来人更加激动了：“你们可考虑过天堂几十亿人的感受？可问过他们是否愿同二位去死？若是二位引起的紊乱波及整个系统，你们可想过为这天堂负责？”</p>
+<p>万宁丝毫不相让：“宁死，不愿在虚幻中苟活。”</p>
+<p>“好，那就看看万千民众愿不愿‘苟活’吧！”那人大喊，随即向人群方向奔去。永安立即追赶，却为时已晚，人群中已逐渐形成了骚动。</p>
+<p>“快！”万宁大喊，“再不走就来不及了！”</p>
+<p>永安立即调转方向，随万宁向车站跑去。风声呼啸，身后追赶的人群迅速壮大，万宁甚至能感觉到服务器的帧率有些下降。</p>
+<p>他们奋力奔跑，人群拼命地追赶，车站近在眼前了，人群也越来越近，只差一点点，就差一点点，后方愤怒的手几乎抓到了万宁的衣领……</p>
+<p>突然，两侧冲出一大波人，径直撞向人群，后方瞬间乱成一团，无数人互相推挤、踩踏、殴打——尽管所有人都不会觉得疼。二人趁机冲进车站。</p>
+<p>这及时赶到的救兵，正是项目完成早期便进入系统的“老前辈”，他们有和万、永二人近乎相当的年龄，同样在系统里感到虚无却不知怎样改变。如今听到二人的意图，当然奋不顾身出手相助。</p>
+<p>车站的系统还没放完引导乘车的动画，二人已强行乘上一辆空无一人的车厢，发动了引擎。</p>
+<p>列车在大地上飞速前进，尘土飞扬，很快就消失在人们的视线里。</p>
+<p>车站前，乱成一团的人们渐渐停滞，有人欣喜，有人绝望。</p>
+<p>二人坐在车厢里，窗外景色飞逝。</p>
+<p>“准备好了吗？”万宁低语。</p>
+<p>“嗯。”永安整了整衣裳，迎接最后的挑战。</p>
+<p>这历史性的一刻，只是二人、一车而已。</p>
+<p>一片寂静。</p>
+<p>“开门，看外面，跳出去，一帧都不要迟疑，懂吗？”万宁最后一次叮嘱道。</p>
+<p>“懂。”</p>
+<p>“3。”</p>
+<p>“2。”</p>
+<p>“1。”</p>
+<p>二人的目光坚毅起来。</p>
+<p>“再见了，天堂。”</p>
+<p>一瞬间，二人只觉着风云变幻，仅仅一帧，他们就到了世界的底端，那里正如万宁所说，无数无用物体堆积在此，数以亿计的建模在一点重合，若是现实，他们早就应该被撕成碎片了。然而，在此，他们只是被无数物体的作用力困在中间。</p>
+<p>“如今所有力是平衡的。”万宁解释道，“现在我们把一件物体往上推，反作用力会让我们脱离平衡点，我们就会被一股极大的推力挤下去。”</p>
+<p>二人如是做了，就像子弹出膛一般，他们的身体坠入虚空，头顶的大地以极高的速度远去。万宁估测，以“天堂”系统的计算能力和现在的速度来说，仅一分钟就能引发系统错误。</p>
+<p>他们看到了世界的最底端。极大的坐标使得系统出现了精度丢失，从而形成了沟壑遍布，满目苍夷的另一个“地面”，好似被肆意切割的画布。</p>
+<p>“到了！”万宁大喊，“就在那里，系统会发生错误！”</p>
+<p>二人闭上了双眼，等待死亡的到来。</p>
+<p>突然，下落停止了。</p>
+<p>他们猛然睁开眼，只见身体一半嵌入了“地面”，但并没有产生错误，他们只是被卡在原地不能动。</p>
+<p>“不！”万宁突然想到了什么，“我忘了他们会给人的代码写无条件容错！地形会出 bug，所有东西都会，但人会直接跳过出错代码！”</p>
+<p>他们抬头看，“天堂”的地面已然因错误而崩塌，整个系统里的数千亿人正一齐下落。</p>
+<p>“完了，一切都完了。”万宁痛苦地呻吟着，“我亲手创建的‘永久安全’，却是永久的监牢！”</p>
+<p>以天下为之笼，则雀无所逃。</p>
+
+            </article>
+            
+	<aside class="rightside">
+	
+		<div class="rightside-button" id="js-aside">
+			<span>
+				<img no-lazy src="/images/icon/aside.png" class="rightside-button-icon" alt="Icon">
+			</span>
+		</div>
+		<script>
+			$("#js-aside").click(function () {
+				onShowAsideButton();
+			});
+		</script>
+	
+	<div class="rightside-button" id="js-toggle_theme">
+		<span>
+			<img no-lazy src="/images/icon/toggle_theme.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	
+<script src="/js/plugins/goto_position.js"></script>
+
+	
+	<div class="rightside-button" id="js-go_top">
+		<span>
+			<img no-lazy src="/images/icon/go_top.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+	<div class="rightside-button" id="js-go_bottom">
+		<span>
+			<img no-lazy src="/images/icon/go_bottom.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	<script>
+		setToggleThemeButtonListener();
+	</script>
+	<script>
+		$('#js-go_top')
+		.gotoPosition( {
+			speed: 300,
+			target: 'top',
+		} );
+		$('#js-go_bottom')
+		.gotoPosition( {
+			speed: 300,
+			target: 'bottom',
+		} );
+	</script>
+</aside>
+
+
+<div class="post-bottom">
+    
+        <div class="post-paging">     
+            <div class="post-paging-last">
+                
+                    <a href="/%E5%8F%98%E5%BD%A2%E8%AE%B0/">
+                        上一篇：变形记
+                    </a>
+                
+            </div>
+            <div class="post-paging-next">
+                
+                    <a href="/%E6%81%8B%E5%9C%9F%E6%83%85%E8%8A%82/">
+                        下一篇：恋土情节
+                    </a>
+                
+            </div>
+        </div>
+    
+    
+    
+        
+    
+</div>
+        </div>
+    </main>
+    
+        <aside class="main-aside">
+    
+<script src="/js/widgets/aside.js"></script>
+
+    <script>
+        showAside();
+    </script>
+
+    <div class="aside-top">
+        <div class="aside-top-about aside-card">
+            <a href="/about" class="aside-top-about-portrait">
+                <img no-lazy src="/images/icon/favicon.webp" alt="Q">
+            </a>
+            <div class="aside-top-about-info">
+                <span class="author"> SylenY</span>
+                <span class="description">所有的回忆都是潮湿的。</span>
+            </div>              
+            <div class="aside-top-about-site">
+                <a href="/categories" class="aside-top-about-site-item">
+                    <span class="title">类别</span>
+                    <span class="count">4</span>
+                </a>
+                <a href="/tags" class="aside-top-about-site-item">
+                    <span class="title">标签</span>
+                    <span class="count">38</span>
+                </a>
+                <a href="/archives" class="aside-top-about-site-item">
+                    <span class="title">归档</span>
+                    <span class="count">12</span>
+                </a>
+            </div>
+            <div class="aside-top-about-contact">
+                
+                    
+                        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+                            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+                        </a>
+                    
+                
+            </div>
+        </div> 
+
+        
+    </div>
+
+    <div class="aside-bottom">
+        
+            <script>
+                
+                    const tocCollapsed = true;
+                
+                
+                    const tocDepth = 6;
+                
+                var headerString = '';
+                for (let i = 1; i <= tocDepth; i++) {
+                    if (i === 1) {
+                        headerString += 'h1';
+                    } else {
+                        headerString += ', h' + i;
+                    }
+                }
+                hbeToc();
+            </script>
+            <div class="aside-bottom-toc aside-card">
+                <div class="aside-bottom-toc-title">
+                    <h1>目录</h1>
+                    <span class="toc-percentage"></span>
+                </div>
+                <ol class="aside-bottom-toc-content"></ol>
+            </div>
+        
+    </div>
+</aside>
+    
+</div>
+		<footer>
+	<div class="content">
+		
+			<span>©2024-2026&nbsp;By&nbsp;<a href="/about">SylenY</a>.</span>
+		
+		<span><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> theme by <a target="_blank" rel="noopener" href="https://github.com/GZ-Metal-Cell/hexo-theme-quieter">Quieter</a>.</span>
+		
+	</div>
+
+	
+<script src="/js/plugins/ref.js"></script>
+
+	
+<script src="/js/plugins/highlight_tools.js"></script>
+
+	<script>
+		var copyIcon = "/images/icon/copy.png";
+		var closeCodeBlockIcon = "/images/icon/close_code_block.png";
+		var highlightShrink = "";
+		var HighlightHeightLimit = "";
+	</script>
+	
+	<!-- Analytics -->
+
+    
+        <!-- Busuanzi Analytics -->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+
+
+	
+
+	
+
+    
+		
+<script src="/js/plugins/replaceSpacesWithNbsp.js"></script>
+
+	
+
+	
+	
+	
+		<script>
+			if (typeof init === 'function') {
+				init();
+			}
+		</script>
+	
+
+	
+		
+	
+
+	
+
+	<!--
+		
+<script src="/js/plugins/jquery.pjax.min.js"></script>
+
+		<script>
+			$(document).pjax('a[target!=_blank]', 'main', {
+				fragment: 'main',
+				timeout: 8000
+			});
+
+			$(document).on('pjax:complete', function() {
+			});
+		</script> 
+	-->
+	<script>
+		console.log('\n %c Hexo-Quieter 主题 %c https://github.com/GZ-Metal-Cell/hexo-theme-quieter \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+	</script>
+</footer>
+	</body>
+
+	<!-- Hexo-Quieter 主题  https://github.com/GZ-Metal-Cell/hexo-theme-quieter -->
+</html>
+

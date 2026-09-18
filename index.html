@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang=zh-CN data-theme="light">
+	
+<script src="/js/plugins/toggleTheme.js"></script>
+
+	<script>
+		setTheme();
+	</script>
+	<head>
+		
+<title>主页 | SylenY's World</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/headers_icon/logo.webp">
+<link href="/css/plugins/print.css" media="print" rel="stylesheet" />
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+    <meta name="keywords" content="SylenY, blog, SylenYao, math, computer science, tech, literature, novel">
+    <meta name="description" content="SylenY's World">
+
+
+
+<script src="/js/plugins/jquery.min.js"></script>
+
+
+<script src="/js/plugins/hljs.min.js"></script>
+
+
+<script src="/js/plugins/init.js"></script>
+
+
+<script src="/js/plugins/hide.js"></script>
+
+
+<script src="/js/plugins/tabs.js"></script>
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+	<meta name="generator" content="Hexo 8.1.2"></head>
+
+	<body>
+		<header class="sticky-header">
+	<nav>
+		<div class="nav-left">
+			<a href="/" class="logo">
+				<img no-lazy src="/images/headers_icon/logo.webp" alt="Quieter">
+			</a>
+			<ul class="breadcrumb" id="breadcrumb"></ul>
+		</div>
+		<div class="nav-right">
+			<ul>
+				
+					<li>
+						<a href="/">
+						  主页
+						</a>
+					</li>
+				
+					<li>
+						<a href="/categories">
+						  类别
+						</a>
+					</li>
+				
+					<li>
+						<a href="/tags">
+						  标签
+						</a>
+					</li>
+				
+					<li>
+						<a href="/archives">
+						  归档
+						</a>
+					</li>
+				
+					<li>
+						<a href="/links">
+						  链接
+						</a>
+					</li>
+				
+					<li>
+						<a href="/about">
+						  关于
+						</a>
+					</li>
+								  
+			</ul>
+		</div>
+		<div class="nav-right-close">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				<path fill="none" d="M0 0h24v24H0z" />
+				<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+			</svg>
+		</div>
+
+		<div class="sidebar">
+    <div class="topo">
+        <p>SylenY's World</p>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories">
+                类别
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags">
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives">
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/links">
+                链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about">
+                关于
+            </a>
+        </li>
+        
+    </ul>
+    <div class="sidebar-footer">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+    <script>
+        $(function() {
+            $('.nav-right-close > svg').click(function() {
+                $('.sidebar').animate({
+                    right: "0"
+                }, 500);
+                $('.shelter').fadeIn("slow");
+            
+                var element = $('.topo');
+                element.addClass('custom-style');
+            
+                var links = null;
+                if ("") {
+                    links = "".split(',');
+                } else {
+                    links = "/images/random_top_img/bg.jpg".split(',');
+                }
+            
+                var randomLink = links[Math.floor(Math.random() * links.length)];
+                element.css('background-image', "url('" + randomLink + "')");
+            });
+          
+            $('.shelter').click(function(e) {
+                $('.sidebar').animate({
+                    right: "-100%"
+                }, 500);
+                $('.shelter').fadeOut("slow");
+            });
+        });      
+    </script>
+</div>
+	</nav>
+
+	
+		<div class="header-background"></div>
+	
+
+	<script>
+		const name = 'home';
+		const ul = document.querySelectorAll('.nav-right ul')[0];
+		const lis = ul.querySelectorAll('li');
+
+		if (name == 'home') {
+			lis[0].classList.add('select');
+		} else {
+			for (let i = 0; i < lis.length; i++) {
+				const li = lis[i];
+				const a = li.querySelector('a');
+				if (name === a.href.split('/')[3]) {
+					li.classList.add('select');
+				}
+			}
+		}
+	</script>
+	
+	<script>
+		var element = document.querySelector('.header-background');
+		if(element) {
+			element.classList.add('custom-style');
+			var links = null;
+			if("")
+			{
+				links = "".split(',');
+			} else
+			{
+				links = "/images/random_top_img/bg.jpg".split(',');
+			}
+			var randomLink = links[Math.floor(Math.random() * links.length)];
+			element.style.backgroundImage = "url('" + randomLink + "')";
+		}
+	</script>
+
+	
+<script src="/js/plugins/breadcrumb.js"></script>
+
+	<script>
+		var menus_title = [];
+		
+			menus_title.push({home: '主页'});
+		
+			menus_title.push({categories: '类别'});
+		
+			menus_title.push({tags: '标签'});
+		
+			menus_title.push({archives: '归档'});
+		
+			menus_title.push({galleries: '相册'});
+		
+			menus_title.push({links: '链接'});
+		
+			menus_title.push({about: '关于'});
+		
+		
+			customBreadcrumb(document.getElementById('breadcrumb'), menus_title);
+		
+	</script>
+</header>
+
+<div class="main-wrapper">
+	<main class="home">
+		<header class="main-header">
+	
+		
+			
+				
+					<div class="header-background-content">
+						<span>
+							<img no-lazy src="/images/headers_icon/title.svg" alt="Quieter">
+						</span>
+						<h1>一个理科生的文艺空间</h1>
+					</div>
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+	
+</header>
+		<div class="post-card-container">
+			<div class="post-card">
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95%E6%B2%A1%E5%87%A0%E4%BD%95%EF%BC%9A%E5%8F%8C%E6%9B%B2%E7%BA%BF%EF%BC%88%E5%AE%9E%E8%B7%B5%E7%AF%87%EF%BC%89/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">解析几何没几何：双曲线（实践篇）</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/analytic-geometry-without-analytic-hyperbola.jpeg" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							在解析几何中，双曲线相对椭圆更难处理，因为不能通过简单的变换变成圆，大部分平面几何方法在此不起作用. 但是，通过重新定义一些基本运算，双曲线可以变成某种意义上的“圆”，并拥有圆的某些性质.
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/数学/">
+									数学
+								</a>
+								<time class="info-date">
+									<a href="/archives/2026">2026</a>/<a href="/archives/2026/03">03</a>/10
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95%E6%B2%A1%E8%A7%A3%E6%9E%90%EF%BC%9A%E5%8F%8C%E6%9B%B2%E7%BA%BF%EF%BC%88%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%89/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">解析几何没解析：双曲线（理论篇）</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/analytic-geometry-without-analytic-hyperbola-theory.png" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							用平面几何方法研究双曲线的理论探究
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/数学/">
+									数学
+								</a>
+								<time class="info-date">
+									<a href="/archives/2026">2026</a>/<a href="/archives/2026/01">01</a>/20
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E9%A2%98%E9%81%87%202/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">题遇 2</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/math-encounters-2.jpeg" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							从数列到不等式再到数列再到不等式
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/数学/">
+									数学
+								</a>
+								<time class="info-date">
+									<a href="/archives/2026">2026</a>/<a href="/archives/2026/01">01</a>/11
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E9%A6%99%E6%B8%AF%E4%B8%89%E6%97%A5/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">香港三日</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/three-days-in-hongkong.jpg" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							维多利亚港的海水将流向何方？
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/随笔/">
+									随笔
+								</a>
+								<time class="info-date">
+									<a href="/archives/2026">2026</a>/<a href="/archives/2026/01">01</a>/05
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E9%A2%98%E9%81%87%201/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">题遇 1</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/math-encounters-1.png" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							当求最小面积的磁场却没有限定磁场形状时...
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/物理/">
+									物理
+								</a>
+								<time class="info-date">
+									<a href="/archives/2025">2025</a>/<a href="/archives/2025/12">12</a>/17
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E5%A5%94%E9%A9%B0%E5%AE%9A%E7%90%86%E7%9A%84%E4%B8%89%E7%BB%B4%E6%8E%A8%E5%B9%BF/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">奔驰定理的三维推广</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/three-dimension-of-the-mercedes-theorem.webp" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/数学/">
+									数学
+								</a>
+								<time class="info-date">
+									<a href="/archives/2025">2025</a>/<a href="/archives/2025/11">11</a>/27
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E6%88%91%E7%9A%84%E4%BC%A0%E8%AF%B4/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">我的传说</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/the-legend-of-minecraft.png" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							小学写的小说，以 MC 关于 Him 的都市传说为背景，非常抽象，大家纯看一乐😂
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/小说/">
+									小说
+								</a>
+								<time class="info-date">
+									<a href="/archives/2025">2025</a>/<a href="/archives/2025/11">11</a>/26
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95%E6%B2%A1%E8%A7%A3%E6%9E%90%EF%BC%9A%E6%A4%AD%E5%9C%86%E4%B8%8E%E5%9C%86/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">解析几何没解析：椭圆与圆</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/analytic-geometry-without-analytic-ellipse-and-circle.webp" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							在解析几何中，椭圆和圆是较为容易通过几何方法处理的. 通过高中或竞赛的平面几何技巧，可以大幅避免坐标计算，在减少复杂度的情况下对图形的本质有更深刻的理解. 本文搜集并分类这些几何题.
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/数学/">
+									数学
+								</a>
+								<time class="info-date">
+									<a href="/archives/2025">2025</a>/<a href="/archives/2025/11">11</a>/25
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E5%8F%98%E5%BD%A2%E8%AE%B0/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">变形记</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/transformation.jpeg" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							√2 想变成一个有理数
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/小说/">
+									小说
+								</a>
+								<time class="info-date">
+									<a href="/archives/2025">2025</a>/<a href="/archives/2025/11">11</a>/24
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+					<div class="post-card-display">
+						<a class="post-card-display-item" href="/%E5%A4%A9%E5%A0%82/">
+							<div class="post-card-top">
+								<h1 class="post-card-top-title">天堂</h1>
+								
+							</div>
+							<div class="img-container">
+								<img style="" src="/images/covers/heaven.tiff" alt="Cover">
+							</div>
+						</a>
+						<span class="post-card-description">
+							以天下为之笼，则雀无所逃。
+						</span>
+						<div class="post-card-meat">
+							<div class="meat-info">
+								<a class="info-category" href="/categories/小说/">
+									小说
+								</a>
+								<time class="info-date">
+									<a href="/archives/2025">2025</a>/<a href="/archives/2025/11">11</a>/23
+								</time>
+							</div>
+							<img no-lazy src="/images/icon/normal.png" class="meat-type" alt="Icon">
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		<div class="change-page">
+			<div class="change-page-item">
+				
+				
+				
+				
+					
+				
+					
+				
+					
+				
+					
+						
+							<div class="select-container">
+								<select aria-label="pagination_select" id="pagination_select" ></select>
+							</div>
+							<script>
+								var select = document.getElementById("pagination_select");
+								for(var i = 1; i < 2 + 1; i++)
+								{
+									var option = document.createElement("option");
+									option.value = i == 1 ? "/" : "/page/" + i.toString();
+									option.text = i;
+									select.add(option);		
+								}
+								select.selectedIndex = 1 - 1;
+								select.onchange = function() {
+									window.location.href = select.value;
+								};
+							</script>
+						
+					
+				
+					
+						
+							<a href="/page/2/">2</a>
+						
+					
+				
+					
+				
+					
+				
+				<!--
+					
+				-->
+				
+					<a href="/page/2/">&#62;</a>
+				
+			</div>
+		</div>
+		
+		
+	<aside class="rightside">
+	
+	<div class="rightside-button" id="js-toggle_theme">
+		<span>
+			<img no-lazy src="/images/icon/toggle_theme.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	
+<script src="/js/plugins/goto_position.js"></script>
+
+	
+	<div class="rightside-button" id="js-go_top">
+		<span>
+			<img no-lazy src="/images/icon/go_top.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+	<div class="rightside-button" id="js-go_bottom">
+		<span>
+			<img no-lazy src="/images/icon/go_bottom.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	<script>
+		setToggleThemeButtonListener();
+	</script>
+	<script>
+		$('#js-go_top')
+		.gotoPosition( {
+			speed: 300,
+			target: 'top',
+		} );
+		$('#js-go_bottom')
+		.gotoPosition( {
+			speed: 300,
+			target: 'bottom',
+		} );
+	</script>
+</aside>
+
+
+<div class="post-bottom">
+    
+    
+    
+</div>
+	</main>
+</div>
+		<footer>
+	<div class="content">
+		
+			<span>©2024-2026&nbsp;By&nbsp;<a href="/about">SylenY</a>.</span>
+		
+		<span><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> theme by <a target="_blank" rel="noopener" href="https://github.com/GZ-Metal-Cell/hexo-theme-quieter">Quieter</a>.</span>
+		
+	</div>
+
+	
+<script src="/js/plugins/ref.js"></script>
+
+	
+<script src="/js/plugins/highlight_tools.js"></script>
+
+	<script>
+		var copyIcon = "/images/icon/copy.png";
+		var closeCodeBlockIcon = "/images/icon/close_code_block.png";
+		var highlightShrink = "";
+		var HighlightHeightLimit = "";
+	</script>
+	
+	<!-- Analytics -->
+
+    
+        <!-- Busuanzi Analytics -->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+
+
+	
+
+	
+
+    
+		
+<script src="/js/plugins/replaceSpacesWithNbsp.js"></script>
+
+	
+
+	
+	
+	
+		<script>
+			if (typeof init === 'function') {
+				init();
+			}
+		</script>
+	
+
+	
+		
+	
+
+	
+
+	<!--
+		
+<script src="/js/plugins/jquery.pjax.min.js"></script>
+
+		<script>
+			$(document).pjax('a[target!=_blank]', 'main', {
+				fragment: 'main',
+				timeout: 8000
+			});
+
+			$(document).on('pjax:complete', function() {
+			});
+		</script> 
+	-->
+	<script>
+		console.log('\n %c Hexo-Quieter 主题 %c https://github.com/GZ-Metal-Cell/hexo-theme-quieter \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+	</script>
+</footer>
+	</body>
+
+	<!-- Hexo-Quieter 主题  https://github.com/GZ-Metal-Cell/hexo-theme-quieter -->
+</html>
+

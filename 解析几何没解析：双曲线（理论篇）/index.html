@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang=zh-CN data-theme="light">
+	
+<script src="/js/plugins/toggleTheme.js"></script>
+
+	<script>
+		setTheme();
+	</script>
+	<head>
+		
+<title>解析几何没解析：双曲线（理论篇） | SylenY's World</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/headers_icon/logo.webp">
+<link href="/css/plugins/print.css" media="print" rel="stylesheet" />
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="数学,高中数学,解析几何,平面几何,数学竞赛,解析几何没解析,数学分析,研究,双曲线,">
+<meta name="description" content="用平面几何方法研究双曲线的理论探究">
+
+
+
+<script src="/js/plugins/jquery.min.js"></script>
+
+
+<script src="/js/plugins/hljs.min.js"></script>
+
+
+<script src="/js/plugins/init.js"></script>
+
+
+<script src="/js/plugins/hide.js"></script>
+
+
+<script src="/js/plugins/tabs.js"></script>
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+	<meta name="generator" content="Hexo 8.1.2"></head>
+
+	<body>
+		<header class="sticky-header">
+	<nav>
+		<div class="nav-left">
+			<a href="/" class="logo">
+				<img no-lazy src="/images/headers_icon/logo.webp" alt="Quieter">
+			</a>
+			<ul class="breadcrumb" id="breadcrumb"></ul>
+		</div>
+		<div class="nav-right">
+			<ul>
+				
+					<li>
+						<a href="/">
+						  主页
+						</a>
+					</li>
+				
+					<li>
+						<a href="/categories">
+						  类别
+						</a>
+					</li>
+				
+					<li>
+						<a href="/tags">
+						  标签
+						</a>
+					</li>
+				
+					<li>
+						<a href="/archives">
+						  归档
+						</a>
+					</li>
+				
+					<li>
+						<a href="/links">
+						  链接
+						</a>
+					</li>
+				
+					<li>
+						<a href="/about">
+						  关于
+						</a>
+					</li>
+								  
+			</ul>
+		</div>
+		<div class="nav-right-close">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				<path fill="none" d="M0 0h24v24H0z" />
+				<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+			</svg>
+		</div>
+
+		<div class="sidebar">
+    <div class="topo">
+        <p>SylenY's World</p>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories">
+                类别
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags">
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives">
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/links">
+                链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about">
+                关于
+            </a>
+        </li>
+        
+    </ul>
+    <div class="sidebar-footer">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+    <script>
+        $(function() {
+            $('.nav-right-close > svg').click(function() {
+                $('.sidebar').animate({
+                    right: "0"
+                }, 500);
+                $('.shelter').fadeIn("slow");
+            
+                var element = $('.topo');
+                element.addClass('custom-style');
+            
+                var links = null;
+                if ("/images/covers/analytic-geometry-without-analytic-hyperbola-theory.png") {
+                    links = "/images/covers/analytic-geometry-without-analytic-hyperbola-theory.png".split(',');
+                } else {
+                    links = "/images/random_top_img/bg.jpg".split(',');
+                }
+            
+                var randomLink = links[Math.floor(Math.random() * links.length)];
+                element.css('background-image', "url('" + randomLink + "')");
+            });
+          
+            $('.shelter').click(function(e) {
+                $('.sidebar').animate({
+                    right: "-100%"
+                }, 500);
+                $('.shelter').fadeOut("slow");
+            });
+        });      
+    </script>
+</div>
+	</nav>
+
+	
+		<div class="header-background"></div>
+	
+
+	<script>
+		const name = 'post';
+		const ul = document.querySelectorAll('.nav-right ul')[0];
+		const lis = ul.querySelectorAll('li');
+
+		if (name == 'home') {
+			lis[0].classList.add('select');
+		} else {
+			for (let i = 0; i < lis.length; i++) {
+				const li = lis[i];
+				const a = li.querySelector('a');
+				if (name === a.href.split('/')[3]) {
+					li.classList.add('select');
+				}
+			}
+		}
+	</script>
+	
+	<script>
+		var element = document.querySelector('.header-background');
+		if(element) {
+			element.classList.add('custom-style');
+			var links = null;
+			if("/images/covers/analytic-geometry-without-analytic-hyperbola-theory.png")
+			{
+				links = "/images/covers/analytic-geometry-without-analytic-hyperbola-theory.png".split(',');
+			} else
+			{
+				links = "/images/random_top_img/bg.jpg".split(',');
+			}
+			var randomLink = links[Math.floor(Math.random() * links.length)];
+			element.style.backgroundImage = "url('" + randomLink + "')";
+		}
+	</script>
+
+	
+<script src="/js/plugins/breadcrumb.js"></script>
+
+	<script>
+		var menus_title = [];
+		
+			menus_title.push({home: '主页'});
+		
+			menus_title.push({categories: '类别'});
+		
+			menus_title.push({tags: '标签'});
+		
+			menus_title.push({archives: '归档'});
+		
+			menus_title.push({galleries: '相册'});
+		
+			menus_title.push({links: '链接'});
+		
+			menus_title.push({about: '关于'});
+		
+		
+			
+				postsBreadcrumb(
+					document.getElementById('breadcrumb'),
+					"类别",
+					"/categories",
+					"数学",
+					"/categories/数学"
+				);
+			
+		
+	</script>
+</header>
+
+<div class="main-wrapper">
+    <main class="post">
+        <header class="main-header">
+	
+		
+			
+				
+<link rel="stylesheet" href="/css/plugins/fancybox.css">
+
+				
+<script src="/js/plugins/fancybox.umd.js"></script>
+
+				
+<script src="/js/plugins/fancybox.js"></script>
+
+			
+			<div class="post-header-background-content">
+				<ul class="post-header-tag">
+					
+						
+							<li><a href="/tags/数学"><span>数学</span></a></li>
+						
+							<li><a href="/tags/高中数学"><span>高中数学</span></a></li>
+						
+							<li><a href="/tags/解析几何"><span>解析几何</span></a></li>
+						
+							<li><a href="/tags/平面几何"><span>平面几何</span></a></li>
+						
+							<li><a href="/tags/数学竞赛"><span>数学竞赛</span></a></li>
+						
+							<li><a href="/tags/解析几何没解析"><span>解析几何没解析</span></a></li>
+						
+							<li><a href="/tags/数学分析"><span>数学分析</span></a></li>
+						
+							<li><a href="/tags/研究"><span>研究</span></a></li>
+						
+							<li><a href="/tags/双曲线"><span>双曲线</span></a></li>
+						
+					
+				</ul>
+				
+				<h1>解析几何没解析：双曲线（理论篇）</h1>
+		
+				
+					<div class="post-header-desc">
+						<svg t="1714702231661" class="icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="1154" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="20" height="20">
+						<path
+							d="M778.24 117.76A46.08 46.08 0 0 1 824.32 163.84v430.08c0 8.4992-4.13696 16.01536-10.50624 20.6848l-0.24576 0.2048L587.5712 846.09024a35.84 35.84 0 0 1-61.48096-25.06752v-220.9792a46.08 46.08 0 0 1 46.08-46.08l200.94976-0.02048V168.96h-522.24v686.08H389.12c13.25056 0 24.1664 10.07616 25.47712 22.97856l0.12288 2.62144c0 14.1312-11.4688 25.6-25.6 25.6h-143.36A46.08 46.08 0 0 1 199.68 860.16V163.84A46.08 46.08 0 0 1 245.76 117.76h532.48z m-26.78784 487.38304h-174.16192v178.176l174.16192-178.176z m-45.19936-169.94304a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z m0-122.88a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z"
+							fill="#ffffff" p-id="1155"></path>
+						</svg>
+						<p>用平面几何方法研究双曲线的理论探究</p>
+					</div>
+				
+		
+				<div class="post-header-info">
+					<svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+					xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+						<path
+							d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+							p-id="2902" fill="#ffffff"></path>
+					</svg>
+					<div class="post-header-info-author">
+						<a href="/about">SylenY</a>
+					</div>
+					
+						<div class="post-header-info-categories">
+							
+								<a href="/categories/数学">数学</a>
+							
+						</div>
+					
+					<time>2026/01/20 00:00:00</time>
+				</div>
+		
+				
+					<div class="post-header-stat">
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" width="20" height="20">
+							<path fill="#FFFFFF" d="M187.2,165.6c0,2.6-2.1,4.7-4.7,4.7H17.5c-2.6,0-4.7-2.1-4.7-4.7s2.1-4.7,4.7-4.7h165.1
+								C185.2,160.9,187.2,163,187.2,165.6z"/>
+							<path fill="#FFFFFF" d="M17.5,29.7c2.6,0,4.7,2.1,4.7,4.7v131.2c0,2.6-2.1,4.7-4.7,4.7s-4.7-2.1-4.7-4.7V34.4
+								C12.8,31.8,14.9,29.7,17.5,29.7z M77.9,91.5c1.8,1.8,1.8,4.8,0,6.6l-39.8,39.8c-1.9,1.8-4.9,1.7-6.6-0.2c-1.7-1.8-1.7-4.6,0-6.4
+								l39.8-39.8C73.1,89.6,76,89.6,77.9,91.5z M169.9,70.2c1.6,2.1,1.1,5-0.9,6.5c0,0,0,0,0,0l-64.2,48.2c-2.1,1.5-5,1.1-6.6-0.9
+								c-1.6-2.1-1.1-5,0.9-6.5c0,0,0,0,0,0l64.2-48.2C165.4,67.7,168.3,68.1,169.9,70.2L169.9,70.2z"/>
+							<path fill="#FFFFFF" d="M104.6,124.5c-1.8,1.8-4.8,1.8-6.6,0L71.6,98.1c-1.8-1.8-1.8-4.8,0-6.6c1.8-1.8,4.8-1.8,6.6,0l26.3,26.3
+								C106.4,119.6,106.4,122.6,104.6,124.5C104.6,124.4,104.6,124.4,104.6,124.5z"/>
+						</svg>
+		
+						
+							
+<script src="/js/plugins/wordCount.js"></script>
+
+							<p class="post-count">文字数：---</p>
+						
+		
+						
+							<p id="busuanzi_container_page_pv" style='display:none;'>阅读数：<span id="busuanzi_value_page_pv"></span></p>
+						
+					</div>
+				
+			</div>
+		
+	
+</header>
+        <div class="post-content article-container">
+            <article class="post-content-info">
+                <h2 id="启发"><a href="#启发" class="headerlink" title="启发"></a>启发</h2><p>众所周知，椭圆可以通过仿射变换变为圆，故椭圆有着圆的许多性质，例如我们有</p>
+<p><strong>定理 0.1（椭圆垂径定理）</strong> 设椭圆 $C:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 上有点 $A,B$，$M$ 为 $A,B$ 中点，则 $k{AB}\cdot k{OM}=-\frac{b^2}{a^2}$.</p>
+<p><strong>证明</strong> 作仿射变换 $(x,y)\rightarrow(\frac x a,\frac y b)$，则 $C\rightarrow \odot O:x^2+y^2=1$. 由垂径定理，$A'B'\bot OM'$，所以 $k{A'B'}\cdot k{OM'}=-1$. 回到原图，$k{AB}\cdot k{OM}=-\frac{b^2}{a^2}$.</p>
+<p>事实上，双曲线也有类似的定理，但是仿射为标准双曲线 $x^2-y^2=1$ 时，得到的斜率乘积为 $1$ 而不是 $-1$. 这促使我们将乘积斜率为 $1$ 视作”垂直“. 正常情况下，垂直意味着斜率乘积为 $-1$，即 $x_0x_1+y_0y_1=0$. 斜率乘积为 $1$ 时，$x_0x_1=y_0y_1$. 这启发我们，如果将点乘的定义改为 $x_0x_1-y_0y_1$，就可以利用点乘为 $0$ 的特性来描绘这种意义上的“垂直”.</p>
+<h2 id="准备工作：平面双曲坐标系"><a href="#准备工作：平面双曲坐标系" class="headerlink" title="准备工作：平面双曲坐标系"></a>准备工作：平面双曲坐标系</h2><p>为了定义新的点乘，我们仿照 $2$ 维欧几里得空间建立平面双曲空间.</p>
+<p><strong>定义 1.1（平面双曲空间）</strong> 我们定义集合</p>
+<p>$$\mathbb{H}=\{(x,y):x,y\in\mathbb{R}\}$$</p>
+<p>为平面双曲空间. 其中每个向量 $(x,y)$ 和 $2$ 维欧几里得空间中的向量 $(x,y)$ 一一对应.</p>
+<p>我们采用类似的方式来定义向量的运算. 以下所有向量及其运算，在不注明的情况下，默认为 $\mathbb{H}$ 中的向量和运算.</p>
+<p><strong>定义 1.2（平面双曲空间中的向量运算）</strong></p>
+<p><strong>加法</strong> $(a,b)+(c,d)=(a+b,c+d)$</p>
+<p><strong>倍乘</strong> $k(a,b)=(ka,kb)(k\in\mathbb{R})$</p>
+<p>加法和倍乘运算与欧几里得空间一样显然满足交换律、结合律和分配律.</p>
+<p><strong>定义 1.3（双曲向量内积）</strong> 对向量 $\vec a=(a,b),\vec b=(c,d)$，定义 $\vec a\cdot\vec b=ac-bd$.</p>
+<p>$\mathbb{H}$ 中向量内积的结果同样是实数. 由于 $ac$ 可能小于 $bd$，双曲内积不满足正定性. 但我们仍然有</p>
+<p>$$\begin{align} \vec a\cdot\vec b&=\vec b\cdot\vec a\notag\\ \vec a\cdot(\vec b+\vec c)&=\vec a\cdot \vec b+\vec a\cdot \vec c\notag\\ k\vec a\cdot\vec b&=k(\vec a\cdot \vec b)\notag \end{align}$$</p>
+<p>证明是显然的.</p>
+<p><strong>定义 1.4（双曲向量模长）</strong> 对任何向量 $\vec x=(a,b)\in\mathbb{H}$，定义</p>
+<p>$$\lVert \vec x\rVert=\sqrt{\vec x\cdot\vec x}=\sqrt{a^2-b^2}$$</p>
+<p>这里模长可以是非负实数（当 $a\ge b$ 时）或虚部非负的纯虚数（当 $a\le b$ 时）.</p>
+<p>同样有</p>
+<p>$$\lVert k\vec x\rVert=\lvert k\vert\lVert \vec x\rVert,k\in{\mathbb{R}}$$</p>
+<p><strong>定义 1.5（双曲向量幅角）</strong> 任何一个双曲向量可以表示为如下形式：$(r\cosh\theta,r\sinh\theta)$. 其中 $r$ 为模长，$\theta$ 称为幅角，记为 $\arg[(r\cosh\theta,r\sinh\theta)]$. 这里 $\theta$ 为任意实数加上 $\frac\pi2i$ 的整数倍.</p>
+<p><strong>定义 1.6（双曲夹角）</strong> 双曲向量 $\vec a$ 和 $\vec b$ 的夹角为 $\arg(\vec a)-\arg(\vec b)$，记为 $\langle \vec a,\vec b\rangle$.</p>
+<p>现在我们来解释这个定义的合理性. 我们把 $\vec a$ 的幅角 $\arg(\vec a)$ 记为 $x+n\frac{\pi}2i$，模长记为 $r$. 由于 $\cosh(x+iy)=\cosh x\cos y+i\sinh x\sin y,\sinh(x+iy)=\sinh x\cos y+i\cosh x\sin y$，当 $y$ 取 $\frac\pi2$ 的整数倍时，得到的双曲正弦和双曲余弦一定同为实数或纯虚数. 因此我们有：</p>
+<p>$n$ 为偶数时，$x_a=\pm r\cosh x,y_a=\pm r\sinh x$. 此时 $\lvert x_a\rvert>\lvert y_a\rvert$，以原点为起点，$\vec a$ 的终点落在平面被 $y=\pm x$ 图像截成的四部分中左右两部分.</p>
+<p>$n$ 为奇数时，$x_a=\pm ri\sinh x,y_a=\pm ri\cosh$. 注意这里 $r$ 是虚部为正的纯虚数，因此 $x_a,y_a$ 仍然是实数. 此时 $\vec a$ 的终点落在被 $y=\pm x$ 图像截成的四部分中上下两部分.</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-hyperbola-theory/coordinate.png" alt=""></p>
+<p>可以得到，双曲幅角在平面中的分布如上图：坐标轴上的点 $x=0$. 靠近红线的点 $x$ 趋近于正无穷，靠近黑线的点 $x$ 趋近于负无穷. $A,B,C,D$ 四个区域的点 $n$ 模 $4$ 的余数分别为 $0,1,2,3$. 我们称 $A,B,C,D$ 所在的四分之一平面依次为 $\mathrm{I},\mathrm{II},\mathrm{II},\mathrm{IV}$ 区.</p>
+<p>对于双曲正弦和双曲余弦函数，函数值关于自变量实部不是周期的，关于自变量虚部以 $2\pi i$ 为周期. 故两个双曲角相等的充要条件是实部相等、虚部相差 $2\pi i$ 的整数倍. 因此在处理幅角之差时，我们取“绝对值”的方式为：实部取绝对值，虚部取 $0$、$\frac\pi2$ 或 $\pi$.</p>
+<p>欧几里得空间中的夹角是由点乘定义的. 我们采用幅角的方式定义，提供了更多空间上的直观性. 双曲几何中很多几何结构和我们平常见到的不一样，需要多加观察才能习惯这些新的几何关系.</p>
+<p>最后我们来说明幅角定义的夹角与点乘定义的幅角是等价的.</p>
+<p><strong>定理 1.1</strong> $\vec a\cdot\vec b=\lVert\vec a\rVert\lVert\vec b\rVert\cosh\langle\vec a,\vec b\rangle$.</p>
+<p><strong>证明</strong> 设 $\vec a=(r\cosh\theta,r\sinh\theta),\vec b=(s\cosh\phi,s\sinh\phi)$，则</p>
+<p>$$\lVert\vec a\rVert\lVert\vec b\rVert\cosh\langle\vec a,\vec b\rangle=rs\cosh(\theta-\phi)=rs(\cosh\theta\cosh\phi-\sinh\phi\sinh\theta)=\vec a\cdot\vec b$$</p>
+<p>若无说明，后文提到的角均指此处定义的双曲夹角.</p>
+<h2 id="几何基础"><a href="#几何基础" class="headerlink" title="几何基础"></a>几何基础</h2><p>为了得到 $\mathbb{H}$ 中向量的几何关系，我们先在新的体系下定义平面几何的基本概念.</p>
+<p><strong>定义 2.1（平行）</strong> $\vec a/\!/\vec b$ 当且仅当存在 $k\in\mathbb{R}$ 使得 $\vec b=k\vec a$.</p>
+<p><strong>定义 2.2（垂直）</strong> $\vec a\bot\vec b$ 当且仅当 $\vec a\cdot\vec b=0$.</p>
+<p>由垂直的定义，$(a,b)\bot(c,d)$ 意味着 $ac-bd=0$，在 $a,b,c,d\ne0$ 时即为 $\frac a b\cdot\frac cd=1$. 这说明在 $\mathbb{H}$ 中，两直线垂直等价于它们的斜率之积为 $1$. 更进一步地，这说明两条直线关于一条斜率为 $1$ 的直线对称.</p>
+<p><strong>定理 2.1（勾股定理及其逆定理）</strong> $\Vert\vec a+\vec b\rVert^2=\lVert\vec a\rVert^2+\lVert\vec b\rVert^2$ 当且仅当 $\vec a\bot \vec b$.</p>
+<p><strong>证明</strong> $\lVert\vec a+\vec b\rVert^2=(\vec a+\vec b)^2=\vec a^2+\vec b^2+2\vec a\cdot\vec b=\lVert\vec a\rVert^2+\lVert\vec b\rVert^2+2\vec a\cdot\vec b$. 因此原式成立当且仅当 $\vec a\cdot\vec b=0$，即 $\vec a\bot \vec b$.</p>
+<p>现在来到了我们的主要研究对象：双曲线. 在 $\mathbb{H}$ 中，由于长度的表达式为 $\sqrt{x^2-y^2}$，等轴双曲线的解析式 $x^2-y^2=r^2$ 恰好是所有到原点距离为 $r$ 的点的集合，这和圆的定义不谋而合. 我们的终极目标就是利用这种“圆”的性质解决双曲线问题.</p>
+<p><strong>定义 2.3（双曲线）</strong> 到定点 $M$ 距离为 $r$ 的点的集合称为以 $M$ 为中心，$r$ 为半径的双曲线，记作 $H(M)$. 省略中心时，默认中心为原点 $O(0,0)$.</p>
+<p>这里的 $r$ 为距离，同样可以是非负实数或虚部非负的纯虚数. $r$ 为实数时，$x^2-y^2=k\ge0$，是焦点在 $x$ 轴上的等轴双曲线；$r$ 为纯虚数时，$y^2-x^2=k\ge0$，是焦点在 $y$ 轴上的等轴双曲线. 这样我们就能对 $\mathbb{H}$ 中向量的模长有更加直观的理解：原点到横向双曲线上一点的距离为实数，到纵向双曲线上一点的距离为纯虚数. 换句话说，斜率绝对值小于 $1$ 的向量模长为实数，大于 $1$ 的向量模长为纯虚数. 特别的，半径为 $0$ 的双曲线是 $x^2-y^2=0$ 对应的退化双曲线.</p>
+<p>双曲线上两点的连线称为弦，过中心的弦称为直径，中心到双曲线上一点的连线称为半径. 双曲线的一段称为弧，弧的两端点对应的半径夹角称为弧的双曲心角，弧的两端点到双曲线上一点的夹角称为弧的双曲周角. 这些基本的概念都和圆一样.</p>
+<p>我们可以通过积分计算双曲线的弧长.</p>
+<p><strong>双曲线的弧长公式</strong> 半径为 $r$，双曲心角为 $\theta$ 的弧长为 $ri\theta$.</p>
+<p><strong>证明</strong> 我们先考虑弧在 $\mathrm{I}$ 区的情况.</p>
+<p>设弧的两端点分别为 $A(r\cosh\theta_0,r\sinh\theta_0),B(r\cosh\theta_1,r\sinh\theta_1),\theta_0,\theta_1\in\mathbb{R}$，则弧 $AB$ 长度为</p>
+<p>$$\begin{align} \int_{\theta_0}^{\theta_1}\sqrt{(\frac{dx}{d\theta})^2-(\frac{dy}{d\theta})^2}d\theta&=r\int_{\theta_0}^{\theta_1}\sqrt{\sinh^2\theta-\cosh^2\theta}d\theta\notag\\&=ri\int_{\theta_0}^{\theta_1}d\theta\\&=ri(\theta_1-\theta_0)\notag \end{align}$$</p>
+<p>弧在 $\mathrm{II}$ 区时，设弧的两端点分别为</p>
+<p>$$A(ri\cosh(\theta_0+\frac12\pi i),ri\sinh(\theta_0+\frac12\pi i))=(-r\sinh\theta_0,-r\cosh\theta_0)\notag\\B(ri\cosh(\theta_0+\frac12\pi i),ri\sinh(\theta_1+\frac12\pi i))=(-r\sinh\theta_1,-r\cosh\theta_1)\notag$$</p>
+<p>其中 $\theta_0,\theta_1\in\mathbb{R}$，则弧 $AB$ 长度为</p>
+<p>$$\begin{align} \int_{\theta_0}^{\theta_1}\sqrt{(\frac{dx}{d\theta})^2-(\frac{dy}{d\theta})^2}d\theta&=-r\int_{\theta_0}^{\theta_1}\sqrt{\cosh^2\theta-\sinh^2\theta}d\theta\notag\\&=-r\int_{\theta_0}^{\theta_1}d\theta\notag\\&=-r(\theta_1-\theta_0)\notag\\&=(ri)i[(\theta_1+\frac12\pi i)-(\theta_0+\frac12\pi i)]\notag\end{align}$$</p>
+<p>在 $\mathrm{III},\mathrm{IV}$ 区，有完全相同的讨论. 容易看出四个区域的弧长公式都满足 $ri\theta$ 的形式.</p>
+<p>现在我们有基础来推导一些几何结论了. 为了利用 $\mathbb{H}$ 中双曲线和圆的相似性，我们尝试将圆中的几何定理“转译”到双曲线中.</p>
+<p><strong>定理 2.2（垂径定理）</strong> 双曲线 $H$ 的弦 $AB$ 上有一点 $M$，则 $OM\bot AB$ 等价于 $M$ 为 $AB$ 中点.</p>
+<p><strong>证明</strong> 设 $\overrightarrow{AM}=k\overrightarrow{AB}$，则</p>
+<p>$$\begin{align} \overrightarrow{OM}\cdot\overrightarrow{AB}&= (\overrightarrow{OA}+\overrightarrow{AM})\cdot(\overrightarrow{OB}-\overrightarrow{OA})\notag\\&=\overrightarrow{OA}\cdot\overrightarrow{OB}-\overrightarrow{OA}\cdot\overrightarrow{OA}+k(\overrightarrow{OB}-\overrightarrow{OA})^2\notag\\&=\overrightarrow{OA}\cdot\overrightarrow{OB}-r^2+k(2r^2-2\overrightarrow{OA}\cdot\overrightarrow{OB})\notag\\&= (\overrightarrow{OA}\cdot\overrightarrow{OB}-r^2)(1-2k) \notag\end{align}$$</p>
+<p>因为 $OA\ne OB$，所以 $\overrightarrow{OA}\cdot\overrightarrow{OB}-r^2\ne0$. 因此 $\overrightarrow{OM}\cdot\overrightarrow{AB}=0$ 等价于 $k=\frac12$，即 $M$ 为 $AB$ 中点.</p>
+<p>这里需要单独说明的是，$\overrightarrow{OA}\cdot\overrightarrow{OB}=OA\cdot OB\cosh\angle AOB=r^2\cosh\angle AOB$. 设 $\angle AOB=\theta+\frac{n}2\pi i,\theta\in\mathbb{R},n\in\mathbb{Z}$，则即使在夹角可能包含虚数的情况下，$\cosh\angle AOB=1$ 的充要条件为 $\cosh\theta = 1,n\equiv0\bmod{4}$，即 $\angle AOB=0$. 因此 $OA\neq OB$ 推出 $\overrightarrow{OA}\cdot\overrightarrow{OB}-r^2\ne0$ 是合理的.</p>
+<p><strong>定理 2.3（切线的性质）</strong> 过双曲线 $H$ 上一点 $P$ 作直线 $l$，$l$ 为 $H$ 的切线等价于 $OP\bot l$.</p>
+<p><strong>证明</strong> 设 $\overrightarrow{OP}=\vec p$，$l$ 的一个方向向量为 $\vec a$. 设 $l$ 上另一点 $Q$ 满足 $\overrightarrow{PQ}=k\vec a,k\in\mathbb{R}$.</p>
+<p>我们有 $\lVert \overrightarrow{OQ}\rVert=\sqrt{(\vec p+k\vec a)^2}=\sqrt{\vec p^2+\vec a^2k^2+2\vec p\cdot\vec ak}$. $l$ 是 $H$ 的切线等价于不存在不为 $0$ 的 $k$ 使得 $\sqrt{(\vec p+k\vec a)^2}=\sqrt{\vec p^2+\vec a^2k^2+2\vec p\cdot\vec ak}=\lVert\vec p\rVert=\sqrt{\vec p^2}$，等价于 $\vec a^2k^2+2\vec p\cdot\vec ak=0$ 只有 $0$ 一个根，等价于 $(2\vec p\cdot\vec a)^2=0$，等价于 $\vec p\cdot \vec a=0$，即 $OP\bot l$.</p>
+<p>回忆之前提到的 $\mathbb{H}$ 中垂直的几何意义，通过切线定理我们实际上证明了在平面直角坐标系中原点到等轴双曲线上一点连线的斜率与过该点双曲线切线的斜率乘积为定值 $1$.</p>
+<p><strong>定理 2.4（垂直平分线的性质）</strong> $MA=MB$ 等价于 $M$ 在 $AB$ 的垂直平分线上.</p>
+<p><strong>证明</strong> 若 $MA=MB$，以 $MA$ 为半径，$M$ 为中心作双曲线 $H$，则 $A,B$ 在 $H$ 上. 过 $M$ 作 $AB$ 垂线，则由垂径定理，该垂线为 $AB$ 中垂线，因此 $M$ 在 $AB$ 中垂线上.</p>
+<p>另一方面，若 $M$ 在 $AB$ 中垂线上，设 $AB$ 中点为 $N$，则 $MA^2=MB^2=MN^2+{\frac{AB}2}^2$. 故 $MA=MB$.</p>
+<p><strong>定理 2.5（切线长定理）</strong> 过双曲线 $H$ 外一点 $M$ 作 $H$ 的两条切线，切点为 $P,Q$，则 $MP=MQ$ 且 $OM$ 垂直平分 $PQ$.</p>
+<p><strong>证明</strong> 由切线定理，$OM\bot PM,OM\bot QM$. 由勾股定理有 $PM^2=QM^2=OM^2-r^2$. 故 $PM=QM$.</p>
+<p>由 $PM=QM,PO=QO$ 及垂直平分线的性质，$O,M$ 都在 $PQ$ 的垂直平分线上. 因此 $OM$ 垂直平分 $PQ$.</p>
+<p>在定理 2.3 和 2.4 中，我们都只使用了已有的几何结论，而没有用到底层的向量或坐标. 通过几何的转化，我们逐渐能够形成真正用几何方法解决解析问题的框架，达到“解析几何没解析”的效果，而不单单是记背二级结论.</p>
+<p>为了得出更强的结论，我们需要一些进阶定理.</p>
+<p><strong>定理 2.6（余弦定理）</strong> 在三角形 $ABC$ 中，$BC^2=AB^2+AC^2-2AB\cdot AC\cosh\angle BAC$.</p>
+<p><strong>证明</strong> 设 $\overrightarrow{AB}=\vec b,\overrightarrow{AC}=\vec c$，则</p>
+<p>$$BC^2=(\vec b-\vec c)^2=\vec b^2+\vec c^2-2\vec b\cdot\vec c=AB^2+AC^2-2AB\cdot AC\cosh\angle BAC$$</p>
+<h2 id="全等和相似"><a href="#全等和相似" class="headerlink" title="全等和相似"></a>全等和相似</h2><p>为了转译更多圆中的定理，我们需要全等和相似的几何工具. 为此我们研究在 $\mathbb{H}$ 中三角形全等和相似的判定方法.</p>
+<p><strong>定理 3.1（三角形内角和）</strong> 三角形内角和为 $\pi i$.</p>
+<p><strong>证明</strong> 设三角形的三个顶点顺时针排列为 $ABC$，设 $\overrightarrow{AB}=\vec b,\overrightarrow{AC}=\vec c$，则</p>
+<p>$$\begin{align}\angle B+\angle C+\angle A&=\arg(\vec b)-\arg(\vec c)+\arg(\vec b-\vec c)-\arg(\vec b)+\arg(-\vec c)-\arg(\vec b-\vec c)\notag\\&=\arg(-\vec c)-\arg(\vec c)=\pi i\end{align}$$</p>
+<p>这里用到了共线且方向相反的向量夹角为 $\pi i$ 的结论. 由 $\cosh(\theta+\pi i)=-\cosh\theta,\sinh(\theta+\pi i)=-\sinh\theta$，证明是显然的. 从几何角度理解，向量取反时会在 $\mathrm{I},\mathrm{III};\mathrm{II},\mathrm{IV}$ 区互相转化，因此幅角差为偶数倍的 $\frac\pi2i$，即 $\pi i$.</p>
+<p><strong>定理 3.2</strong> 直角的大小为 $\frac \pi2i$.</p>
+<p><strong>证明</strong> 设 $\vec a=(r\cosh\theta,r\sinh\theta),\vec b=(r'\cosh(\theta+\phi),r'\sinh(\theta+\phi))$，则 $\angle AOB=\phi$. $\vec a\bot\vec b$ 时，$\cosh\theta\cosh(\theta+\phi)-\sinh\theta\sinh(\theta+\phi)=\cosh(\phi)=0$，所以 $\phi=\frac\pi2i$.</p>
+<p>定理 3.2 让我们可以用幅角的视角看待垂直关系. 注意到两个垂直的向量幅角实部相等，虚部相差 $\frac\pi2i$，故将一个向量幅角不断加 $\frac\pi2i$ 的过程其实是在将该向量沿着 $y=x$ 和 $y=-x$ 轮流进行轴对称变换.</p>
+<p>和欧式几何一致地，全等三角形指三条边和三个角都相等的三角形，相似三角形指三条边成比例、三组对应角相等的三角形.</p>
+<p><strong>定理 3.3（SSS）</strong> 三条边都相等的三角形全等.</p>
+<p><strong>证明</strong> 设在三角形 $ABC$ 和三角形 $DEF$ 中，$AB=DE,AC=DF,BC=EF$. 则由余弦定理：</p>
+<p>$$\cosh \angle A=\frac{AB^2+AC^2-BC^2}{2AB\cdot AC}=\frac{DE^2+DF^2-EF^2}{2DE\cdot DF}=\cosh\angle D$$</p>
+<p>由于夹角的实部和虚部都是是非负的，因此不存在 $\angle A+\angle D=0$ 的情况. 因此 $\angle A=\angle D+2k\pi i(k\in\mathbb{Z})$，即两角相等. 同理余下两个夹角分别相等，于是 $\triangle BAC\cong\triangle DEF$.</p>
+<p><strong>定理 3.4（SAS）</strong> 两条边及其夹角相等的三角形全等.</p>
+<p><strong>证明</strong> 设在三角形 $ABC$ 和三角形 $DEF$ 中，$AB=DE,AC=DF,\angle A=\angle D$. 则由余弦定理：</p>
+<p>$$\begin{align}BC&=\sqrt{AB^2+AC^2-2AB\cdot AC\cosh\angle A}\notag\\&=\sqrt{DE^2+DF^2-2DE\cdot DF\cosh\angle D}\notag\\&=EF\notag\end{align}$$</p>
+<p>由定理 3.3，$\triangle BAC\cong\triangle DEF$.</p>
+<p><strong>定理 3.5（HL）</strong> 斜边和一条直角边分别相等的三角形全等.</p>
+<p><strong>证明</strong> 由勾股定理，另一条直角边也相等. 由 SSS 全等显然成立.</p>
+<p>ASA 和 AAS 全等实际上是相似比为 $1$ 的相似，因此我们直接考虑相似三角形的判定.</p>
+<p><strong>定理 3.6（SSS）</strong> 三条边成比例的三角形相似.</p>
+<p><strong>证明</strong> 设在三角形 $ABC$ 和三角形 $DEF$ 中，$AB=kDE,AC=kDF,BC=kEF$，这里 $k$ 为正实数或虚部为正的纯虚数. 则由余弦定理：</p>
+<p>$$\cosh \angle BAC=\frac{AB^2+AC^2-BC^2}{2AB\cdot AC}=\frac{(kDE)^2+(kDF)^2-(kEF)^2}{2kDE\cdot kDF}=\cosh\angle EDF$$</p>
+<p>同理可得三组对应角都相等. 因此 $\triangle ABC\sim\triangle DEF$.</p>
+<p>$k$ 可为纯虚数意味着边长为实数和纯虚数的两个三角形可以相似，只要它们的边长成比例. 这意味着 $\mathrm{I,III}$ 区和 $\mathrm{II,IV}$ 区的三角形也可以是相似三角形.</p>
+<p>为了证明 AA 相似，先证明一个引理.</p>
+<p><strong>定理 3.7（射影定理）</strong> 三角形 $ABC$ 中，有</p>
+<p>$$AB=BC\cosh\angle B+AC\cosh\angle A\\BC=AB\cosh\angle B+AC\cosh\angle C\\AC=AB\cosh\angle A+BC\cosh\angle C$$</p>
+<p><strong>证明</strong> 由余弦定理</p>
+<p>$${2AB\cdot AC}\cdot\cosh \angle A={AB^2+AC^2-BC^2}\\{2AB\cdot BC}\cdot\cosh \angle B={AB^2+BC^2-AC^2}$$</p>
+<p>两式相加得 $AB=BC\cosh\angle B+AC\cosh\angle A$. 同理可得其他两式.</p>
+<p><strong>定理 3.8（AA）</strong> 两组对应角相等的三角形相似.</p>
+<p><strong>证明</strong> 设两三角形 $ABC$ 和三角形 $DEF$ ，由射影定理</p>
+<p>$$AB=BC\cosh\angle B+AC\cosh\angle A\\BC=AB\cosh\angle B+AC\cosh\angle C$$</p>
+<p>因此 $AB,AC,BC$ 是方程组</p>
+<p>$$\begin{equation}\begin{cases} 1=\frac yx\cosh\angle B+\frac zx\cosh\angle A\notag\\\frac yx=\cosh\angle B+\frac zx\cosh\angle C\notag\\\end{cases}\end{equation}\tag{1}$$</p>
+<p>的一组解.</p>
+<p>因为三角形 $ABC$ 和三角形 $DEF$ 中两组对应角相等，$DE,DF,EF$ 同样满足方程组 $(1)$.</p>
+<p>得到 $\frac{BC}{AB}=\frac{\cosh C+\cosh A\cosh B}{\cosh A+\cosh B\cosh C},\frac{AC}{AB}=\frac{1-\cosh^2B}{\cosh A+\cosh B\cosh C}$. 同理可得 $\frac{EF}{DE}=\frac{\cosh C+\cosh A\cosh B}{\cosh A+\cosh B\cosh C},\frac{DF}{DE}=\frac{1-\cosh^2B}{\cosh A+\cosh B\cosh C}$ . 因此 $AB,AC,BC$ 一定与 $DE,DF,EF$ 成比例. 由定理 3.5，$\triangle ABC\sim\triangle DEF$.</p>
+<p>有了 AA 相似的证明，AAS 和 ASA 全等的证明都是显然的. SAS 相似的证明和 SAS 全等的证明是几乎相同的. 到这里我们知道欧几里得几何学中全等和相似的内容在 $\mathbb{H}$ 中都能完全相同地使用. 但需要注意的是，$\mathbb{H}$ 中的全等并不意味着“形状相同”，即全等的三角形并不能通过旋转和平移实现重合. 如下图中 $C(1,0),A(\cosh1,\sinh1),B(\cosh2,\sinh2)$，由 SAS 全等容易得到 $\triangle AOC\cong\triangle BOA$，但它们的形状完全不一样. 这种奇怪的全等将在后续双曲线上有关弦和角的证明中起到作用.</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-hyperbola-theory/triangles.png" alt=""></p>
+<h2 id="双曲心角和双曲周角"><a href="#双曲心角和双曲周角" class="headerlink" title="双曲心角和双曲周角"></a>双曲心角和双曲周角</h2><p>平面几何中，圆的另一个重要作用就是导角和导边. 我们以全等为基础证明这些角边关系.</p>
+<p>通过求双曲线的弧长公式，我们已经得到了“等角对等弧”的结论. 我们再证明几个用于导角的基本定理.</p>
+<p><strong>定理 4.1</strong> 等腰三角形的两个底角相等.</p>
+<p><strong>证明</strong> 设三角形 $ABC$ 中，$AB=AC$. 作 $AD\bot BC$ 于 $D$，则 $\triangle ABD\cong\triangle ACD(HL)$. 故 $\angle B = \angle C$.</p>
+<p><strong>定理 4.2</strong> 三角形一个角的外角等于另外两个内角的和.</p>
+<p>由三角形内角和等于平角大小 $\pi i$ 即证.</p>
+<p><strong>定理 4.3（三线合一）</strong> 等腰三角形顶角的角平分线、底边中线和底边上的高重合.</p>
+<p><strong>证明</strong> 设等腰三角形 $ABC$ 中 $AB=AC$，$D$ 在 $BC$ 上，由垂径定理，$BD=CD$ 等价于 $AD\bot BC$，故底边中线和底边上的高重合. 设 $AD'$ 是 $\angle A$ 的平分线，则 $\triangle ABD'\cong\triangle ACD'(SAS)$，故 $BD'=CD'$，$AD'$ 与底边中线和底边上的高重合.</p>
+<p><strong>定理 4.4</strong> 在同一双曲线或等半径双曲线中，相等的双曲心角所对的弦相等，相等的弦所对的双曲心角相等.</p>
+<p>分别由 SAS 和 SSS 全等即证.</p>
+<p><strong>定理 4.5</strong> 同弧所对的双曲周角是双曲心角的一半.</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-hyperbola-theory/4.5.png" alt=""></p>
+<p><strong>证明</strong> 如图，连接 $OC$. 由 $OA=OC,OB=OC$ 和定理 4.1 有 $\angle OCB=\angle B,\angle OCA=\angle A$. 故 $\angle BCA=\angle BCO-\angle ACO=\angle CMO-\angle BCA-\angle ACO=\angle BOA-\angle BCA$，所以 $\angle BCA=\frac12\angle BOA$.</p>
+<p>证明定理 4.5 的过程中我们很明显感觉到，由于长度定义的不同，$\mathbb{H}$ 中线段的相等、垂直等关系很难以直观看出. 这需要我们时刻清楚图中线段的本质，即哪些是弦、哪些是半径. 必要的时候，可以将双曲线画成圆再将点和线一一对应以保持思路的清晰.</p>
+<p><strong>定理 4.6（正弦定理）</strong> 在三角形 $ABC$ 中，$\frac{AB}{\sinh\angle C}=\frac{BC}{\sinh\angle A}=\frac{AC}{\sinh\angle B}=2R$，其中 $R$ 为三角形的外接双曲线半径.</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-hyperbola-theory/4.6.png" alt=""></p>
+<p><strong>证明</strong> 如图，以 $ABC$ 外接双曲线中心为原点 $O$.</p>
+<p>作 $C$ 关于 $O$ 的对称点 $C'$，连接 $CC',BC'$，则 $\angle C'=\angle A=\frac12\angle COB$. 由定理 4.5，$\angle CBC'=\frac\pi2i$，故 $CB\bot C'B$. 于是 $BC=CC'\sinh\angle C'=2R\sinh A$. 同理证明其余两式.</p>
+<p>注意三角形的外接双曲线可以通过两条边的垂直平分线作出，故在 $\mathbb{H}$ 中同样有“三点确定一个双曲线”.</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>将 $\mathbb{H}$ 中的证明体系用回平面直角坐标系解决双曲线有关解析几何问题，是研究 $\mathbb{H}$ 中几何性质的初衷. 需要注意 $\mathbb{H}$ 中的概念和平面直角坐标系中概念的关系.</p>
+<p>以下是从 $\mathbb{H}$ 映射到平面直角坐标系的关系：</p>
+<p>点 $\rightarrow$ 点</p>
+<p>直线 $\rightarrow$ 直线</p>
+<p>双曲线（圆） $\rightarrow$ 等轴双曲线</p>
+<p>垂直 $\rightarrow$ 斜率乘积为 $1$</p>
+<p>由于点乘的重新定义，$\mathbb{H}$ 中的长度和角度概念在平面直角坐标系中都没有几何意义，因此进行线段长和角度的分析是困难的. 但是部分情况下双曲长度也有所用途，例如两条线段在同一条直线上时，我们仍然有线段长度和 $x$ 坐标差成比例，因而与欧式几何中的长度成比例.</p>
+<p>由此可见，我们所讨论的方法擅长解决交点、轨迹相关问题. 在部分情况下，也可以用于求解共线线段的长度比例. 另外垂直对应的斜率乘积为 $1$ 在很多时候相当有用.</p>
+<p><a href="/解析几何没几何：双曲线（实践篇）.md">解析几何没几何：双曲线（实践篇）</a>中给出了一些可以用 $\mathbb{H}$ 中几何体系大幅省略坐标计算的典型题目以供参考.</p>
+<p>由此可见，有了这样一个以双曲线为基础的平面几何体系，加上欧几里得平面几何的研究方法，我们可以将的平面几何结论转译到双曲线上，解决定点定线、轨迹问题等对距离、角度不敏感的问题. 理论上来说，数学竞赛中的平面几何结论，如梅涅劳斯定理、帕斯卡定理、根轴根心等，都可以通过相同的方式证明它们的“双曲线”版本. 然而随着定理越来越强，使用这些定理的限制也越来越多，几乎找不到可以适用的题目，因此本文没有将几何知识拓展到过深的程度. 从实践意义上看，本文所介绍的体系在高考中只能作为猜测答案的依据，而不能充当证明过程. 因此真正重要的是“把双曲线当圆看待”的几何视角以及对不同圆锥曲线间共性的理解. 剩余的定理推广过程都只是平凡的工作.</p>
+
+            </article>
+            
+	<aside class="rightside">
+	
+		<div class="rightside-button" id="js-aside">
+			<span>
+				<img no-lazy src="/images/icon/aside.png" class="rightside-button-icon" alt="Icon">
+			</span>
+		</div>
+		<script>
+			$("#js-aside").click(function () {
+				onShowAsideButton();
+			});
+		</script>
+	
+	<div class="rightside-button" id="js-toggle_theme">
+		<span>
+			<img no-lazy src="/images/icon/toggle_theme.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	
+<script src="/js/plugins/goto_position.js"></script>
+
+	
+	<div class="rightside-button" id="js-go_top">
+		<span>
+			<img no-lazy src="/images/icon/go_top.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+	<div class="rightside-button" id="js-go_bottom">
+		<span>
+			<img no-lazy src="/images/icon/go_bottom.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	<script>
+		setToggleThemeButtonListener();
+	</script>
+	<script>
+		$('#js-go_top')
+		.gotoPosition( {
+			speed: 300,
+			target: 'top',
+		} );
+		$('#js-go_bottom')
+		.gotoPosition( {
+			speed: 300,
+			target: 'bottom',
+		} );
+	</script>
+</aside>
+
+
+<div class="post-bottom">
+    
+        <div class="post-paging">     
+            <div class="post-paging-last">
+                
+                    <a href="/%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95%E6%B2%A1%E5%87%A0%E4%BD%95%EF%BC%9A%E5%8F%8C%E6%9B%B2%E7%BA%BF%EF%BC%88%E5%AE%9E%E8%B7%B5%E7%AF%87%EF%BC%89/">
+                        上一篇：解析几何没几何：双曲线（实践篇）
+                    </a>
+                
+            </div>
+            <div class="post-paging-next">
+                
+                    <a href="/%E9%A2%98%E9%81%87%202/">
+                        下一篇：题遇 2
+                    </a>
+                
+            </div>
+        </div>
+    
+    
+    
+        
+    
+</div>
+        </div>
+    </main>
+    
+        <aside class="main-aside">
+    
+<script src="/js/widgets/aside.js"></script>
+
+    <script>
+        showAside();
+    </script>
+
+    <div class="aside-top">
+        <div class="aside-top-about aside-card">
+            <a href="/about" class="aside-top-about-portrait">
+                <img no-lazy src="/images/icon/favicon.webp" alt="Q">
+            </a>
+            <div class="aside-top-about-info">
+                <span class="author"> SylenY</span>
+                <span class="description">所有的回忆都是潮湿的。</span>
+            </div>              
+            <div class="aside-top-about-site">
+                <a href="/categories" class="aside-top-about-site-item">
+                    <span class="title">类别</span>
+                    <span class="count">4</span>
+                </a>
+                <a href="/tags" class="aside-top-about-site-item">
+                    <span class="title">标签</span>
+                    <span class="count">38</span>
+                </a>
+                <a href="/archives" class="aside-top-about-site-item">
+                    <span class="title">归档</span>
+                    <span class="count">12</span>
+                </a>
+            </div>
+            <div class="aside-top-about-contact">
+                
+                    
+                        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+                            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+                        </a>
+                    
+                
+            </div>
+        </div> 
+
+        
+            <div class="aside-top-series aside-card">
+                <ol class="aside-top-series-content">
+                    
+                    
+                    
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        <li class="series-item">
+                                            <a class="series-link" href="/解析几何没解析：椭圆与圆/">
+                                                <span class="text">解析几何没解析：椭圆与圆</span>
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        
+                                        <li class="series-item active">
+                                            <a class="series-link active" href="/解析几何没解析：双曲线（理论篇）/">
+                                                <span class="text">解析几何没解析：双曲线（理论篇）</span>
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        <li class="series-item">
+                                            <a class="series-link" href="/解析几何没几何：双曲线（实践篇）/">
+                                                <span class="text">解析几何没几何：双曲线（实践篇）</span>
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                </ol>
+                <div class="aside-top-series-title">
+                    <h1>
+                        <a href="/tags/解析几何没解析">标签：解析几何没解析</a>
+                    </h1>
+                    <span id="serial-number">2/3</span>
+                </div>
+            </div>
+            <script>
+                activeSeriesItem();
+            </script> 
+        
+    </div>
+
+    <div class="aside-bottom">
+        
+            <script>
+                
+                    const tocCollapsed = true;
+                
+                
+                    const tocDepth = 6;
+                
+                var headerString = '';
+                for (let i = 1; i <= tocDepth; i++) {
+                    if (i === 1) {
+                        headerString += 'h1';
+                    } else {
+                        headerString += ', h' + i;
+                    }
+                }
+                hbeToc();
+            </script>
+            <div class="aside-bottom-toc aside-card">
+                <div class="aside-bottom-toc-title">
+                    <h1>目录</h1>
+                    <span class="toc-percentage"></span>
+                </div>
+                <ol class="aside-bottom-toc-content"></ol>
+            </div>
+        
+    </div>
+</aside>
+    
+</div>
+		<footer>
+	<div class="content">
+		
+			<span>©2024-2026&nbsp;By&nbsp;<a href="/about">SylenY</a>.</span>
+		
+		<span><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> theme by <a target="_blank" rel="noopener" href="https://github.com/GZ-Metal-Cell/hexo-theme-quieter">Quieter</a>.</span>
+		
+	</div>
+
+	
+<script src="/js/plugins/ref.js"></script>
+
+	
+<script src="/js/plugins/highlight_tools.js"></script>
+
+	<script>
+		var copyIcon = "/images/icon/copy.png";
+		var closeCodeBlockIcon = "/images/icon/close_code_block.png";
+		var highlightShrink = "";
+		var HighlightHeightLimit = "";
+	</script>
+	
+	<!-- Analytics -->
+
+    
+        <!-- Busuanzi Analytics -->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+
+
+	
+
+	
+		
+			
+<script src="/js/plugins/katex.js"></script>
+
+			<script>
+				const katex_css = '/js/plugins/katex/katex.min.css';
+				const katex_js = '/js/plugins/katex/katex.min.js';
+				const katex_auto_render = '/js/plugins/katex/auto-render.min.js';
+			</script>
+			<link rel="stylesheet" href="/js/plugins/katex/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+			<script defer src="/js/plugins/katex/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+			<script defer src="/js/plugins/katex/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+			
+				<link href="/css/plugins/copy-tex.css" rel="stylesheet">
+				<script src="/js/plugins/copy-tex.js"></script>
+			
+		
+	
+
+    
+		
+<script src="/js/plugins/replaceSpacesWithNbsp.js"></script>
+
+	
+
+	
+	
+	
+		<script>
+			if (typeof init === 'function') {
+				init();
+			}
+		</script>
+	
+
+	
+		
+	
+
+	
+
+	<!--
+		
+<script src="/js/plugins/jquery.pjax.min.js"></script>
+
+		<script>
+			$(document).pjax('a[target!=_blank]', 'main', {
+				fragment: 'main',
+				timeout: 8000
+			});
+
+			$(document).on('pjax:complete', function() {
+			});
+		</script> 
+	-->
+	<script>
+		console.log('\n %c Hexo-Quieter 主题 %c https://github.com/GZ-Metal-Cell/hexo-theme-quieter \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+	</script>
+</footer>
+	</body>
+
+	<!-- Hexo-Quieter 主题  https://github.com/GZ-Metal-Cell/hexo-theme-quieter -->
+</html>
+
