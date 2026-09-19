@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>锐评九调生物遗传题</title>
+      <link href="//%20critique-of-a-genetics-question/"/>
+      <url>//%20critique-of-a-genetics-question/</url>
+      
+        <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><p>(单选)某植物的花色有红色和自色两种. 现有一种纯合红花品系和多种纯合白花品系，不同的纯合自花品系间杂交，有的 $F_1$ 都开红花，有的 $F_1$ 都开白花. 纯合红花品系和所有纯合白花品系杂交分别得到 $F_1$。$F_1$ 自交得到 $F_2$，$F_2$ 中红花比例最小为 $\frac{27}{64}$. 下列叙述错误的是</p><p>A. 该植物花色至少受三对等位基因控制</p><p>﻿﻿B. 理论上纯合白花品系的基因型有 $7$ 种<br>﻿﻿<br>﻿﻿C. 两纯合白花品系杂交，若 $F_1$ 都开白花，则 $F_1$ 自交可得到红花<br>﻿<br>﻿D. ﻿纯合红花品系和所有纯合白花品系杂交，$F_2$ 中白花比例最小为 $\frac14$</p><h2 id="证伪"><a href="#证伪" class="headerlink" title="证伪"></a>证伪</h2><p>构造一种植物，有 $5$ 对等位基因 $Aa,Bb,Cc,Dd,Ee$ 共同控制花色. 其中当且仅当 $A,B,C,D$ 皆为显性，或 $E$ 为显性，$A,B,C,D$ 不全为隐性时花色为红，否则为白.</p><p>设题中“纯合红花品系”为<br>$$R:AABBCCDDee$$<br>“多种纯合白花品系”为<br>$$\begin{gather*}W_1:AAbbccddee\\ W_2:aaBBccddee\\W_3:aabbccddEE\end{gather*}$$<br>首先证明这个构造满足题设条件：</p><p>白色品系中，<br>$$W_1\times W_2=AaBbccddee$$<br>为白色.<br>$$W_1\times W_3=AabbccddEe$$<br>为红色，满足“不同的纯合自花品系间杂交，有的 $F_1$ 都开红花，有的 $F_1$ 都开白花”.</p><p>红色品系与白色品系杂交时，子代有以下几种可能：<br>$$\begin{gather*}F_{1}=R\times W_1=AABbCcDdee\\F_2=R\times W_2=AaBBCcDdee\\F_3=R\times W_3=AaBbCcDdEe\end{gather*}$$<br>自交后，$F_1\times F_1$ 有 $\frac{27}{64}$ 为红，$F_2\times F_2$ 有 $\frac{27}{64}$ 为红，$F_3\times F_3$ 有 $\frac34\times(1-\frac1{256})+\frac14\times\frac{81}{256}=\frac{423}{512}$ 为红，其中红花比例最小为 $\frac{27}{64}$，满足“$F_2$ 中红花比例最小为 $\frac{27}{64}$”.</p><p>故该构造满足题意.</p><p>对于 $C$，$W_1\times W_2=AaBbccddee$ 都开白花，而 $AaBbccddee$ 自交不可能得到红花，故 $C$ 错误.</p><p>对于 $D$，由上，$F_3\times F_3$ 中白花比例最小，为 $\frac{89}{512}\lt \frac14$，故 $D$ 错误.</p><p>故 $CD$ 都错，题目有误.</p><blockquote><p>2026 年的武汉九调，总体来说令人非常失望. 要么是有大量好题，但不考虑限时考试能否做完的（数学），要么是没有好题，让学生手撕 $\sqrt6$ 恶心人的（物理）. 生物试卷也是如此. 我能理解命题人试图对标高考、成为标杆的野心，但出题最基本的是正确、严谨. 这道遗传题不给基因对数和花色决定逻辑，试图借此“考验学生思维”，出题人自己却也陷入了“$\frac{27}{64}$ 就是三对基因”的惯性思维，想当然地将这种明显约束力度不够的题目印在了试卷上. 出题应当讲究创新性和思维性，但如若最基本的合理、正确都做不到，我宁愿在大考试卷上见到爆算解析几何.</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生物 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生物 </tag>
+            
+            <tag> 遗传 </tag>
+            
+            <tag> 证伪 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>作文题让我抒真情？</title>
       <link href="//literature-for-gaokao-composition/"/>
       <url>//literature-for-gaokao-composition/</url>
@@ -191,9 +220,9 @@
             
             <tag> 题遇 </tag>
             
-            <tag> 数列 </tag>
-            
             <tag> 不等式 </tag>
+            
+            <tag> 数列 </tag>
             
             <tag> 有界性 </tag>
             
@@ -226,9 +255,9 @@
             
             <tag> 题遇 </tag>
             
-            <tag> 数形结合 </tag>
-            
             <tag> 不等式 </tag>
+            
+            <tag> 数形结合 </tag>
             
         </tags>
       
@@ -335,8 +364,6 @@
             
             <tag> 数学竞赛 </tag>
             
-            <tag> 数列 </tag>
-            
             <tag> 不等式 </tag>
             
             <tag> 归纳法 </tag>
@@ -344,6 +371,8 @@
             <tag> 权方和不等式 </tag>
             
             <tag> 递推 </tag>
+            
+            <tag> 数列 </tag>
             
         </tags>
       
