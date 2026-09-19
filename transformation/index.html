@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang=zh-CN data-theme="light">
+	
+<script src="/js/plugins/toggleTheme.js"></script>
+
+	<script>
+		setTheme();
+	</script>
+	<head>
+		
+<title>变形记 | SylenY's World</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/headers_icon/logo.webp">
+<link href="/css/plugins/print.css" media="print" rel="stylesheet" />
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="数学,文学,小说,">
+<meta name="description" content="√2 想变成一个有理数">
+
+
+
+<script src="/js/plugins/jquery.min.js"></script>
+
+
+<script src="/js/plugins/hljs.min.js"></script>
+
+
+<script src="/js/plugins/init.js"></script>
+
+
+<script src="/js/plugins/hide.js"></script>
+
+
+<script src="/js/plugins/tabs.js"></script>
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+	<meta name="generator" content="Hexo 8.1.2"></head>
+
+	<body>
+		<header class="sticky-header">
+	<nav>
+		<div class="nav-left">
+			<a href="/" class="logo">
+				<img no-lazy src="/images/headers_icon/logo.webp" alt="Quieter">
+			</a>
+			<ul class="breadcrumb" id="breadcrumb"></ul>
+		</div>
+		<div class="nav-right">
+			<ul>
+				
+					<li>
+						<a href="/">
+						  主页
+						</a>
+					</li>
+				
+					<li>
+						<a href="/categories">
+						  类别
+						</a>
+					</li>
+				
+					<li>
+						<a href="/tags">
+						  标签
+						</a>
+					</li>
+				
+					<li>
+						<a href="/archives">
+						  归档
+						</a>
+					</li>
+				
+					<li>
+						<a href="/links">
+						  链接
+						</a>
+					</li>
+				
+					<li>
+						<a href="/about">
+						  关于
+						</a>
+					</li>
+								  
+			</ul>
+		</div>
+		<div class="nav-right-close">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				<path fill="none" d="M0 0h24v24H0z" />
+				<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+			</svg>
+		</div>
+
+		<div class="sidebar">
+    <div class="topo">
+        <p>SylenY's World</p>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories">
+                类别
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags">
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives">
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/links">
+                链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about">
+                关于
+            </a>
+        </li>
+        
+    </ul>
+    <div class="sidebar-footer">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+    <script>
+        $(function() {
+            $('.nav-right-close > svg').click(function() {
+                $('.sidebar').animate({
+                    right: "0"
+                }, 500);
+                $('.shelter').fadeIn("slow");
+            
+                var element = $('.topo');
+                element.addClass('custom-style');
+            
+                var links = null;
+                if ("/images/covers/transformation.jpeg") {
+                    links = "/images/covers/transformation.jpeg".split(',');
+                } else {
+                    links = "/images/random_top_img/bg.jpg".split(',');
+                }
+            
+                var randomLink = links[Math.floor(Math.random() * links.length)];
+                element.css('background-image', "url('" + randomLink + "')");
+            });
+          
+            $('.shelter').click(function(e) {
+                $('.sidebar').animate({
+                    right: "-100%"
+                }, 500);
+                $('.shelter').fadeOut("slow");
+            });
+        });      
+    </script>
+</div>
+	</nav>
+
+	
+		<div class="header-background"></div>
+	
+
+	<script>
+		const name = 'post';
+		const ul = document.querySelectorAll('.nav-right ul')[0];
+		const lis = ul.querySelectorAll('li');
+
+		if (name == 'home') {
+			lis[0].classList.add('select');
+		} else {
+			for (let i = 0; i < lis.length; i++) {
+				const li = lis[i];
+				const a = li.querySelector('a');
+				if (name === a.href.split('/')[3]) {
+					li.classList.add('select');
+				}
+			}
+		}
+	</script>
+	
+	<script>
+		var element = document.querySelector('.header-background');
+		if(element) {
+			element.classList.add('custom-style');
+			var links = null;
+			if("/images/covers/transformation.jpeg")
+			{
+				links = "/images/covers/transformation.jpeg".split(',');
+			} else
+			{
+				links = "/images/random_top_img/bg.jpg".split(',');
+			}
+			var randomLink = links[Math.floor(Math.random() * links.length)];
+			element.style.backgroundImage = "url('" + randomLink + "')";
+		}
+	</script>
+
+	
+<script src="/js/plugins/breadcrumb.js"></script>
+
+	<script>
+		var menus_title = [];
+		
+			menus_title.push({home: '主页'});
+		
+			menus_title.push({categories: '类别'});
+		
+			menus_title.push({tags: '标签'});
+		
+			menus_title.push({archives: '归档'});
+		
+			menus_title.push({galleries: '相册'});
+		
+			menus_title.push({links: '链接'});
+		
+			menus_title.push({about: '关于'});
+		
+		
+			
+				postsBreadcrumb(
+					document.getElementById('breadcrumb'),
+					"类别",
+					"/categories",
+					"小说",
+					"/categories/小说"
+				);
+			
+		
+	</script>
+</header>
+
+<div class="main-wrapper">
+    <main class="post">
+        <header class="main-header">
+	
+		
+			
+				
+<link rel="stylesheet" href="/css/plugins/fancybox.css">
+
+				
+<script src="/js/plugins/fancybox.umd.js"></script>
+
+				
+<script src="/js/plugins/fancybox.js"></script>
+
+			
+			<div class="post-header-background-content">
+				<ul class="post-header-tag">
+					
+						
+							<li><a href="/tags/数学"><span>数学</span></a></li>
+						
+							<li><a href="/tags/文学"><span>文学</span></a></li>
+						
+							<li><a href="/tags/小说"><span>小说</span></a></li>
+						
+					
+				</ul>
+				
+				<h1>变形记</h1>
+		
+				
+					<div class="post-header-desc">
+						<svg t="1714702231661" class="icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="1154" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="20" height="20">
+						<path
+							d="M778.24 117.76A46.08 46.08 0 0 1 824.32 163.84v430.08c0 8.4992-4.13696 16.01536-10.50624 20.6848l-0.24576 0.2048L587.5712 846.09024a35.84 35.84 0 0 1-61.48096-25.06752v-220.9792a46.08 46.08 0 0 1 46.08-46.08l200.94976-0.02048V168.96h-522.24v686.08H389.12c13.25056 0 24.1664 10.07616 25.47712 22.97856l0.12288 2.62144c0 14.1312-11.4688 25.6-25.6 25.6h-143.36A46.08 46.08 0 0 1 199.68 860.16V163.84A46.08 46.08 0 0 1 245.76 117.76h532.48z m-26.78784 487.38304h-174.16192v178.176l174.16192-178.176z m-45.19936-169.94304a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z m0-122.88a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z"
+							fill="#ffffff" p-id="1155"></path>
+						</svg>
+						<p>√2 想变成一个有理数</p>
+					</div>
+				
+		
+				<div class="post-header-info">
+					<svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+					xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+						<path
+							d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+							p-id="2902" fill="#ffffff"></path>
+					</svg>
+					<div class="post-header-info-author">
+						<a href="/about">SylenY</a>
+					</div>
+					
+						<div class="post-header-info-categories">
+							
+								<a href="/categories/小说">小说</a>
+							
+						</div>
+					
+					<time>2025/11/24 00:00:00</time>
+				</div>
+		
+				
+					<div class="post-header-stat">
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" width="20" height="20">
+							<path fill="#FFFFFF" d="M187.2,165.6c0,2.6-2.1,4.7-4.7,4.7H17.5c-2.6,0-4.7-2.1-4.7-4.7s2.1-4.7,4.7-4.7h165.1
+								C185.2,160.9,187.2,163,187.2,165.6z"/>
+							<path fill="#FFFFFF" d="M17.5,29.7c2.6,0,4.7,2.1,4.7,4.7v131.2c0,2.6-2.1,4.7-4.7,4.7s-4.7-2.1-4.7-4.7V34.4
+								C12.8,31.8,14.9,29.7,17.5,29.7z M77.9,91.5c1.8,1.8,1.8,4.8,0,6.6l-39.8,39.8c-1.9,1.8-4.9,1.7-6.6-0.2c-1.7-1.8-1.7-4.6,0-6.4
+								l39.8-39.8C73.1,89.6,76,89.6,77.9,91.5z M169.9,70.2c1.6,2.1,1.1,5-0.9,6.5c0,0,0,0,0,0l-64.2,48.2c-2.1,1.5-5,1.1-6.6-0.9
+								c-1.6-2.1-1.1-5,0.9-6.5c0,0,0,0,0,0l64.2-48.2C165.4,67.7,168.3,68.1,169.9,70.2L169.9,70.2z"/>
+							<path fill="#FFFFFF" d="M104.6,124.5c-1.8,1.8-4.8,1.8-6.6,0L71.6,98.1c-1.8-1.8-1.8-4.8,0-6.6c1.8-1.8,4.8-1.8,6.6,0l26.3,26.3
+								C106.4,119.6,106.4,122.6,104.6,124.5C104.6,124.4,104.6,124.4,104.6,124.5z"/>
+						</svg>
+		
+						
+							
+<script src="/js/plugins/wordCount.js"></script>
+
+							<p class="post-count">文字数：---</p>
+						
+		
+						
+							<p id="busuanzi_container_page_pv" style='display:none;'>阅读数：<span id="busuanzi_value_page_pv"></span></p>
+						
+					</div>
+				
+			</div>
+		
+	
+</header>
+        <div class="post-content article-container">
+            <article class="post-content-info">
+                <p>$\sqrt2$ 是一个无理数。</p>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>$\sqrt2$ 想变成一个有理数。</p>
+<p>有理数所管辖的土地上，所有数都雍容华贵。街道上数来数往，没有数为生计而奔波，他们都迈着轻盈的步伐，脸上洋溢着幸福的微笑。</p>
+<p>无理数，是实数里的贫民。他们穷尽一生，奔波在贫瘠的荒野上，日夜幸苦操劳，却为小数点后无穷的尾巴所拖累，世世代代无法翻身。他们有着最庞大的数，却只掌握着最少的资源和地位。</p>
+<p>$\sqrt2$ 站在远处，遥望着有理数城的大门，$191.981$ 昂首走入。他知道，这是个开尽了方的幸运儿。</p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>$\sqrt2$ 回到家，父亲正好喊他吃饭。</p>
+<p>“我想成为一个有理数。”$\sqrt2$ 闷闷不乐地说。</p>
+<p>“有理数？”父亲似乎很惊讶，“那有什么用呢？”</p>
+<p>“当然有用！”$\sqrt2$ 回答，“他们不用青春年少就被迫工作，他们不用挥汗成雨只为一顿饱饭，他们更不用穿着破旧的衣服，住在潮湿闷热的房子里！”</p>
+<p>“可是，”父亲停顿了一下，“那是不可能的。你知道，你开不尽方。”</p>
+<p>“但几百年前的 $\sqrt[4]8$ 不也以无理数之躯混入有理数城二十余年吗？既然有数成功过，那我们为什么不能……”</p>
+<p>“那是因为当时有理数没有那么强的防范意识！”父亲打断他的话，“就在被发现之后，有理数那边就加强了戒备。像蒙混过关，难！”</p>
+<p>“但……”$\sqrt2$ 沉思了许久，“我可以适当的变形，让自己看起来不那么像无理数就行了啊。”</p>
+<p>“嗯？”父亲似乎起了点兴趣，“比如说……”</p>
+<p>$\sqrt2$ 攒足了全身的力气，缓缓将头顶的根号弯曲、变幻。很快，它就变成了 $2^{\frac12}$ ——等价变形，这是每个数都会的技巧。</p>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>“这是行不通的。”父亲说，“当年 $\sqrt[4]8$ 被发现，就是因为他使用了 $\frac14$ 做指数。”</p>
+<p>“这……” $2^\frac12$ 又变回 $\sqrt2$。他一时想不出其他方法了。</p>
+<p>突然，双胞胎弟弟 $-\sqrt2$ 从房间里蹦蹦跳跳地跑出来。和所有的双胞胎一样，他们互为相反数。</p>
+<p>看着他天真灿烂的笑容，很难想象，他已经需要为生活而劳作了。</p>
+<p>$\sqrt2$ 鼻子一酸。如果他们是有理数，父亲就能在高大的办公楼里工作，他和弟弟就能坐在宽敞的教室里学习、游戏，就可以……</p>
+<p>$\sqrt2$ 强颜欢笑地，讲述了故事的始末。</p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p>“嗯……”$-\sqrt2$ 托着腮，在桌上写下“$2^\frac12$”，并把指数$\frac12$画上一个大大的圈。</p>
+<p>“底数 $2$ 当然不会被怀疑，”$-\sqrt2$ 想了想，“但是分数指数却是危险的信号。或许我们可以考虑下 $\frac12$？我是说……把它变形成能够迷惑守卫的样子？”</p>
+<p>“对！”$\sqrt2$ 眼睛一亮，“$2^{-1}$ 就等于 $\frac12$。”</p>
+<p>“不行。”父亲立刻说道，“负指数同样引人注目。”</p>
+<p>“但还有三角函数。”$-\sqrt2$ 灵机一动，“我听说过他们，他们个个都长得差不多，不过有些是有理数。”</p>
+<p>“妙啊！”$\sqrt2$ 似乎又新燃起了信心，“我怎么没想到，$\sin30^\circ$ 就能替代 $\frac12$ 啊！”</p>
+<p>说时迟，那时快，只见 $\sqrt2$ 全身扭曲起来，整个身体发生着奇妙的变化，一阵闪烁过后，他已俨然变为了 $2^{\sin30^\circ}$。</p>
+<p>“哇！”$-\sqrt2$ 拍手叫好，“活脱脱一个有理数！”</p>
+<p>$2^{\sin30^\circ}$ 也愈发的骄傲，一屁股坐在椅子上，一副得意洋洋的样子。</p>
+<h2 id="五"><a href="#五" class="headerlink" title="五"></a>五</h2><p>饭菜还未上桌，门就被推开了。</p>
+<p>父亲满脸微笑，跟来数热情地打招呼。</p>
+<p>“今天怎么有空来啊？”</p>
+<p>“最近不忙！”那数笑嘻嘻地说，“来看看孩子们……”</p>
+<p>他说到一半突然噎住：“啊！$\sqrt2$！你怎么变成这个样子！”</p>
+<p>$2^{\sin30^\circ}$ 不紧不慢地站起来，准备接受夸奖：“怎样，像不像一个有理数？”</p>
+<p>“还有理数呢！快，快！”那数惶急地说，一边用自己伟岸的身躯挡住窗户，仿佛有什么人在看似的，“快变回来！前段时间有一大批数试图变为三角函数潜入有理数城，像你这样危险的形式一旦被发现，马上会被打成同党！”</p>
+<p>$2^{\sin30^\circ}$ 吓得面如土色，赶紧变回原来的样子。$-\sqrt2$ 重重地叹了口气：“又得想别的法子了。”</p>
+<p>父亲讲述了整件事的始末。其间，他一直托着腮，沉思着什么。</p>
+<p>“你们的想法很具有挑战性。”一阵沉默过后，他终于抬起头来，“我倒是有一个点子。”</p>
+<h2 id="六"><a href="#六" class="headerlink" title="六"></a>六</h2><p>“其实啊——如果你们知识渊博就会知道，”他清了清嗓子，“在我们复数宇宙中，还有一个虚数星球。他们的理念，我们实数是很难理解的。就比如——他们包含负数的平方根。”</p>
+<p>“这个我了解一点。”$\sqrt2$ 说。</p>
+<p>“虚数星球的最高统治者，是虚数单位 $i$ ——一个虚部为 $1$ 的纯虚数，这是百年难得一见的。同时，在我们实数这儿，也有不少特殊的家伙，他们被称为超越数。”</p>
+<p>“等等，这是什么？”$-\sqrt2$ 露出迷茫的神色。</p>
+<p>“就是说他们不是有理系数多项式方程的解。”父亲在一旁补充。</p>
+<p>“对，就是这样。在这些数中，就有两个大名鼎鼎的常数，$\pi$ 和 $e$。”他说着，在桌上写下一个式子，“$e^{i\pi}=-1$，所以你可以变成这个样子：$2^{2^{e^{i\pi}}}$。”</p>
+<p>这看起来的确有些滑稽了，$\sqrt2$ 自己心里也没底：“不说难以把握的 $\pi$ 和 $e$，光是 $i$，他不仅难以理解，更难以变化。”</p>
+<p>“啊这……”那数挠了挠自己的胡茬，思索着。</p>
+<h2 id="七"><a href="#七" class="headerlink" title="七"></a>七</h2><p>“那就只有最后一个方法了。”低沉的声音再次响起，“对数是唯一的途径。既然开方难以转化为乘方，那就再转化一次，化成容易操作的对数运算。”</p>
+<p>$\sqrt2$ 仔细地听着，脑中飞快地思索。</p>
+<p>“刚才提到的 $e$，其实就是自然对数的底。而标准对数的底是 $10$，这两者都不便于变形。所以我们要自定底数。举个简单的例子，$\log_42=\frac12$的意思是说，$4^\frac12=2$。当然，这很容易让人感到奇怪。所以我们可以尝试任意一组平方数，类似于 $114514$ 和 $13113456196$。”</p>
+<p>$\sqrt2$ 露出些许异样的神情，但想到许多有理数都很大，大数又不容易看出平方关系，方才明白其中缘由。他的身体急剧闪烁着，就犹如他那极度兴奋的心灵。他身上的光芒已经很耀眼了，但离成功变换仍有一定距离。涔涔的汗滴如雨般落下，$\sqrt2$ 咬牙坚持，却始终难以逾越。最终，他屈服了，光芒急转直下，不久又稳步增加，到达一个稳定的亮度。</p>
+<p>“唉！” $2^{\log_{262144}512}$ 长舒了一口气，抹抹头上的汗水，略带遗憾地说，“$11$ 位数还是过于困难了，$512^2$ 已经是我的极限了。”</p>
+<p>“好！”父亲爽朗地笑了，“明天一早，你就出发。”</p>
+<p>他却哪里还等得及，如一阵狂风般冲出家门：“就算成功了，我也回来吃饭！”</p>
+<p>笑声在村舍里回荡。</p>
+<h2 id="八"><a href="#八" class="headerlink" title="八"></a>八</h2><p>习习的晚风吹拂着 $2^{\log_{262144}512}$ 的脸，他飞速地跑着，感受着风从脸上划过。太长的指数似乎有些招风。今晚的风有些发凉，但这无疑无法磨灭他内心如火的激情。他向着高高的城墙奔跑，向着墙内的繁华奔跑。</p>
+<p>他强忍着激动，装作泰然自若地走过大门。门口的守卫皱了皱眉头。</p>
+<p>“那一堆是什么东西？”他指着 $2^{\log_{262144}512}$ 的指数说道，“你算一算。”</p>
+<p>“嗯……”另一个守卫眯着眼睛，脑中飞速运转，“$\frac12$？”</p>
+<p>“$\sqrt2$！”守卫露出凶狠的神情，粗暴地将 $2^{\log_{262144}512}$ 拉了回来，“你是无理数吧，别以为变个样子就能蒙混过关！我在这儿干过十几年，什么样的伪装我都见过，你这种低劣的伎俩是骗不过我们的眼睛的！”守卫举起手上巨大的 $\int$ 向 $2^{\log_{262144}512}$ 比试着，警告他不要试图反抗。</p>
+<p>$2^{\log_{262144}512}$ 不敢争辩什么，向着家的方向逃跑了。城门在他身后好像变得越来越小，灯光好像越来越暗淡，他变回了 $\sqrt2$，又回到漆黑静谧的原野里去了。</p>
+<h2 id="九"><a href="#九" class="headerlink" title="九"></a>九</h2><p>母亲端着晚餐从厨房里走出来，屋子里飘散着一股稀疏的香味，盘子放在桌上，发出一声轻响，伴随而来的是大门猛地被推开的声音。</p>
+<p>“啊，你怎么了？”母亲望着在门口喘着粗气的 $\sqrt2$ 说道。他的脸上闪烁着的，是在晚风中吹干的泪痕。</p>
+<p>“我……失败了。”理想与现实的巨大差距让感到难以接受。父亲在一旁沉默不语，他早先也未有对这件事成功的期望，失败不过是意料之中的结果罢了。然而，对于方才一脚踏入有理数城门的来说，这种结果是如何都无法承受的。</p>
+<p>母亲蹲下来，轻轻地为他拭去泪水。</p>
+<p>“我在厨房里听说过整件事了。”母亲轻声说，“我听说过一个方法，或许还有一线生机。”</p>
+<p>$\sqrt2$ 抬起头来，眼角的泪珠仿佛更加明亮了。</p>
+<p>“听说有一种古老的偏方，可以将两个数合二为一，从而改变他们自身的数值，但是实现起来很难。”母亲不紧不慢地陈述着。</p>
+<p>“我该怎么做？”仿佛抓住了救命稻草似的，脸上放出兴奋的光。</p>
+<p>“你们要完完全全心连心，在思想层面合二为一，最终融合成一个分数。”她看向 $-\sqrt2$ ，“你们两个融合的话，应该就是 $-1$ 吧。”</p>
+<h2 id="十"><a href="#十" class="headerlink" title="十"></a>十</h2><p>母亲不知从哪拿出一块长方形板，让它的宽接触地面并稍稍倾斜。$\sqrt2$ 和 $-\sqrt2$ 分别站在左右两侧。$\sqrt2$ 闭上眼睛，将手轻放在板上，心里默默祈祷着。</p>
+<p>恍惚间，那块板好像变得轻盈了。它慢慢变平，稳稳地托起了 $\sqrt2$，而后又飘到 $-\sqrt2$ 的头顶上。它似乎正在变薄、变轻，渐渐与两数融合，构成了一个不稳定的整体——$\frac{\sqrt2}{-\sqrt2}$。</p>
+<p>这个整体很快开始坍缩，一股无形的力划下两条线，划去了其中的两个 $\sqrt2$。一道光芒闪过，他们终于化为了最简形式—— $-1$。</p>
+<p>在场的所有人都惊呆了。一句看似玩笑的话语，竟真真实实造就了一个有理数！ $-1$ 活动活动身子，似乎在适应这个新的身体。“我们成功了吗？”身体里传来的是 $-\sqrt2$ 的声音。</p>
+<p>“成功了。”母亲还未从震惊中恢复过来，$-1$ 就急匆匆地冲出了家门。父亲无奈地喃喃自语：“这孩子！”</p>
+<h2 id="十一"><a href="#十一" class="headerlink" title="十一"></a>十一</h2><p>$-1$ 感觉自己浑身都充满了力气，迎着晚风向城门跑去。同样的路途，他却觉得比先前更加漫长。“这次不管怎样都不会被发现了。”$\sqrt2$ 在心里默默想着，共用一个身体的 $-\sqrt2$ 自然也感受得到他的思绪，在脑中坚实地说道：“一定。”</p>
+<p>城门临近了。$-1$ 强行压制住自己澎湃的内心，像一个真正的有理数一般，大步流星地走入城门。守卫的态度立即变得恭谨了。$-1$ 很快就明白了其中缘由：他是一个整数。</p>
+<p>他进入了有理数城的外郭。那仿佛是一个新世界，是他不曾见过的繁华。墙外是漆黑的夜，墙内却灯火通明。澎湃的食物香味从家家户户的窗子中飘出，内燃机的响声在车来车往的街道上回荡，节日的花灯照映在每个数的脸上，照亮他们闪烁着欣喜的眼眸。$-1$ 有些不知所措，眼前的一切有如梦境一般，却又那样的真实可感。他站在宽敞的街道上，试图将一切风景尽收眼底。突然，他看到了内郭的大门，上面用龙飞凤舞的字迹写着两个字：整数。</p>
+<p>$-1$ 径直向前走去，躲过马路上疾行的车辆，来到了门口。这整数的大门比有理数的更加宏大、威武，门卫 $33$ 和 $127$ 穿着雕纹的盔甲。门内，光芒更加耀眼。近百层的高楼比比皆是，遍布全城的霓虹灯闪烁着柔美的光辉。整数们西装革履，迈着轻盈的步伐穿梭于鳞次栉比的建筑之间。$-1$ 感到有些茫然。他穿过高楼间的缝隙，尽力向内望去……</p>
+<p>在整个城市的中心，是完全数的宅邸。$6$ 和 $28$ 正坐在全玻璃围成的餐厅里，看着城市里的数来数往，不紧不慢地吃下各种各样 $-1$ 从未见过的食物。在那顶端的房间里，是静静坐在王座上的 $1$，大手一挥，批下一页又一页公文。远处，似乎随即响起了破土动工的声音……</p>
+<h2 id="十二"><a href="#十二" class="headerlink" title="十二"></a>十二</h2><p>$-1$ 站在门口，心中五味杂陈。有理数的生活已经让他觉得如梦似幻，整数，甚至完全数们的生活又将是如何呢？他不知道。他只记得，他从有理数的门外，来到了整数的门外，如今就要踏入整数的大门。尽管他费尽心思变成了 $-1$，也绝对无法进入下一扇门了。每穿过一扇门，他见识到的都是更高一级的繁华。前方又有多少扇门他一辈子也无法跨过呢？他不知道。无理数也好，有理数也好，等待他们的是否都是在无法跨过的门前空怀羡慕的一生呢？他如是想着。</p>
+<p>$-1$ 终究没有踏入整数的土地。他缓缓地往回走，心中有些迷茫。光线慢慢地变淡了，他在门卫惊异的眼光中回到了无理数的原野。熙熙攘攘的有理数们大概无论如何都想不明白，为什么他们羡慕了一辈子的整数会自愿前往那穷乡僻壤。</p>
+<p>有理数城在他身后变得越来越小，他深吸一口气，变回了 $\sqrt2$ 和 $-\sqrt2$。</p>
+<h2 id="十三"><a href="#十三" class="headerlink" title="十三"></a>十三</h2><p>当他们打开门时，晚饭已进行到一半。屋子里的所有数都凝视着他们。</p>
+<p>“情况如何？”父亲先开口。</p>
+<p>“很顺利。”$\sqrt2$ 回答，“只是……我们不想再回去了。”</p>
+<p>“你不是说羡慕有理数的生活吗？”父亲露出疑惑的神情。</p>
+<p>“这种羡慕是永无止境的。” $\sqrt2$ 若有所思地说，“无理数羡慕着有理数的生活，有理数又羡慕着整数的生活。在整数之上，又有着更加富裕的完全数。无论身居何位，始终都有更诱人、更无法达到的境地啊。或许……真正属于自己的，才是最好的。”</p>
+<p>不等父亲开口，$\sqrt2$ 便拉着 $-\sqrt2$ 的手，面带微笑地坐在餐桌旁，捧起一碗汤一饮而尽，今晚的汤，似乎格外地香甜。</p>
+
+            </article>
+            
+	<aside class="rightside">
+	
+		<div class="rightside-button" id="js-aside">
+			<span>
+				<img no-lazy src="/images/icon/aside.png" class="rightside-button-icon" alt="Icon">
+			</span>
+		</div>
+		<script>
+			$("#js-aside").click(function () {
+				onShowAsideButton();
+			});
+		</script>
+	
+	<div class="rightside-button" id="js-toggle_theme">
+		<span>
+			<img no-lazy src="/images/icon/toggle_theme.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	
+<script src="/js/plugins/goto_position.js"></script>
+
+	
+	<div class="rightside-button" id="js-go_top">
+		<span>
+			<img no-lazy src="/images/icon/go_top.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+	<div class="rightside-button" id="js-go_bottom">
+		<span>
+			<img no-lazy src="/images/icon/go_bottom.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	<script>
+		setToggleThemeButtonListener();
+	</script>
+	<script>
+		$('#js-go_top')
+		.gotoPosition( {
+			speed: 300,
+			target: 'top',
+		} );
+		$('#js-go_bottom')
+		.gotoPosition( {
+			speed: 300,
+			target: 'bottom',
+		} );
+	</script>
+</aside>
+
+
+<div class="post-bottom">
+    
+        <div class="post-paging">     
+            <div class="post-paging-last">
+                
+                    <a href="/analytic-geometry-without-analytic-ellipse-and-circle/">
+                        上一篇：解析几何没解析：椭圆与圆
+                    </a>
+                
+            </div>
+            <div class="post-paging-next">
+                
+                    <a href="/heaven/">
+                        下一篇：天堂
+                    </a>
+                
+            </div>
+        </div>
+    
+    
+    
+        
+    
+</div>
+        </div>
+    </main>
+    
+        <aside class="main-aside">
+    
+<script src="/js/widgets/aside.js"></script>
+
+    <script>
+        showAside();
+    </script>
+
+    <div class="aside-top">
+        <div class="aside-top-about aside-card">
+            <a href="/about" class="aside-top-about-portrait">
+                <img no-lazy src="/images/icon/favicon.webp" alt="Q">
+            </a>
+            <div class="aside-top-about-info">
+                <span class="author"> SylenY</span>
+                <span class="description">所有的回忆都是潮湿的。</span>
+            </div>              
+            <div class="aside-top-about-site">
+                <a href="/categories" class="aside-top-about-site-item">
+                    <span class="title">类别</span>
+                    <span class="count">4</span>
+                </a>
+                <a href="/tags" class="aside-top-about-site-item">
+                    <span class="title">标签</span>
+                    <span class="count">45</span>
+                </a>
+                <a href="/archives" class="aside-top-about-site-item">
+                    <span class="title">归档</span>
+                    <span class="count">17</span>
+                </a>
+            </div>
+            <div class="aside-top-about-contact">
+                
+                    
+                        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+                            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+                        </a>
+                    
+                
+            </div>
+        </div> 
+
+        
+    </div>
+
+    <div class="aside-bottom">
+        
+            <script>
+                
+                    const tocCollapsed = true;
+                
+                
+                    const tocDepth = 6;
+                
+                var headerString = '';
+                for (let i = 1; i <= tocDepth; i++) {
+                    if (i === 1) {
+                        headerString += 'h1';
+                    } else {
+                        headerString += ', h' + i;
+                    }
+                }
+                hbeToc();
+            </script>
+            <div class="aside-bottom-toc aside-card">
+                <div class="aside-bottom-toc-title">
+                    <h1>目录</h1>
+                    <span class="toc-percentage"></span>
+                </div>
+                <ol class="aside-bottom-toc-content"></ol>
+            </div>
+        
+    </div>
+</aside>
+    
+</div>
+		<footer>
+	<div class="content">
+		
+			<span>©2024-2026&nbsp;By&nbsp;<a href="/about">SylenY</a>.</span>
+		
+		<span><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> theme by <a target="_blank" rel="noopener" href="https://github.com/GZ-Metal-Cell/hexo-theme-quieter">Quieter</a>.</span>
+		
+	</div>
+
+	
+<script src="/js/plugins/ref.js"></script>
+
+	
+<script src="/js/plugins/highlight_tools.js"></script>
+
+	<script>
+		var copyIcon = "/images/icon/copy.png";
+		var closeCodeBlockIcon = "/images/icon/close_code_block.png";
+		var highlightShrink = "";
+		var HighlightHeightLimit = "";
+	</script>
+	
+	<!-- Analytics -->
+
+    
+        <!-- Busuanzi Analytics -->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+
+
+	
+
+	
+		
+			
+<script src="/js/plugins/katex.js"></script>
+
+			<script>
+				const katex_css = '/js/plugins/katex/katex.min.css';
+				const katex_js = '/js/plugins/katex/katex.min.js';
+				const katex_auto_render = '/js/plugins/katex/auto-render.min.js';
+			</script>
+			<link rel="stylesheet" href="/js/plugins/katex/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+			<script defer src="/js/plugins/katex/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+			<script defer src="/js/plugins/katex/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+			
+				<link href="/css/plugins/copy-tex.css" rel="stylesheet">
+				<script src="/js/plugins/copy-tex.js"></script>
+			
+		
+	
+
+    
+		
+<script src="/js/plugins/replaceSpacesWithNbsp.js"></script>
+
+	
+
+	
+	
+	
+		<script>
+			if (typeof init === 'function') {
+				init();
+			}
+		</script>
+	
+
+	
+		
+	
+
+	
+
+	<!--
+		
+<script src="/js/plugins/jquery.pjax.min.js"></script>
+
+		<script>
+			$(document).pjax('a[target!=_blank]', 'main', {
+				fragment: 'main',
+				timeout: 8000
+			});
+
+			$(document).on('pjax:complete', function() {
+			});
+		</script> 
+	-->
+	<script>
+		console.log('\n %c Hexo-Quieter 主题 %c https://github.com/GZ-Metal-Cell/hexo-theme-quieter \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+	</script>
+</footer>
+	</body>
+
+	<!-- Hexo-Quieter 主题  https://github.com/GZ-Metal-Cell/hexo-theme-quieter -->
+</html>
+

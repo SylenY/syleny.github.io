@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang=zh-CN data-theme="light">
+	
+<script src="/js/plugins/toggleTheme.js"></script>
+
+	<script>
+		setTheme();
+	</script>
+	<head>
+		
+<title>解析几何没解析：椭圆与圆 | SylenY's World</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/headers_icon/logo.webp">
+<link href="/css/plugins/print.css" media="print" rel="stylesheet" />
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="数学,高中数学,数学竞赛,解析几何,平面几何,解析几何没解析,题集,">
+<meta name="description" content="在解析几何中，椭圆和圆是较为容易通过几何方法处理的. 通过高中或竞赛的平面几何技巧，可以大幅避免坐标计算，在减少复杂度的情况下对图形的本质有更深刻的理解. 本文搜集并分类这些几何题.">
+
+
+
+<script src="/js/plugins/jquery.min.js"></script>
+
+
+<script src="/js/plugins/hljs.min.js"></script>
+
+
+<script src="/js/plugins/init.js"></script>
+
+
+<script src="/js/plugins/hide.js"></script>
+
+
+<script src="/js/plugins/tabs.js"></script>
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+	<meta name="generator" content="Hexo 8.1.2"></head>
+
+	<body>
+		<header class="sticky-header">
+	<nav>
+		<div class="nav-left">
+			<a href="/" class="logo">
+				<img no-lazy src="/images/headers_icon/logo.webp" alt="Quieter">
+			</a>
+			<ul class="breadcrumb" id="breadcrumb"></ul>
+		</div>
+		<div class="nav-right">
+			<ul>
+				
+					<li>
+						<a href="/">
+						  主页
+						</a>
+					</li>
+				
+					<li>
+						<a href="/categories">
+						  类别
+						</a>
+					</li>
+				
+					<li>
+						<a href="/tags">
+						  标签
+						</a>
+					</li>
+				
+					<li>
+						<a href="/archives">
+						  归档
+						</a>
+					</li>
+				
+					<li>
+						<a href="/links">
+						  链接
+						</a>
+					</li>
+				
+					<li>
+						<a href="/about">
+						  关于
+						</a>
+					</li>
+								  
+			</ul>
+		</div>
+		<div class="nav-right-close">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				<path fill="none" d="M0 0h24v24H0z" />
+				<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+			</svg>
+		</div>
+
+		<div class="sidebar">
+    <div class="topo">
+        <p>SylenY's World</p>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories">
+                类别
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags">
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives">
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/links">
+                链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about">
+                关于
+            </a>
+        </li>
+        
+    </ul>
+    <div class="sidebar-footer">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+    <script>
+        $(function() {
+            $('.nav-right-close > svg').click(function() {
+                $('.sidebar').animate({
+                    right: "0"
+                }, 500);
+                $('.shelter').fadeIn("slow");
+            
+                var element = $('.topo');
+                element.addClass('custom-style');
+            
+                var links = null;
+                if ("/images/covers/analytic-geometry-without-analytic-ellipse-and-circle.webp") {
+                    links = "/images/covers/analytic-geometry-without-analytic-ellipse-and-circle.webp".split(',');
+                } else {
+                    links = "/images/random_top_img/bg.jpg".split(',');
+                }
+            
+                var randomLink = links[Math.floor(Math.random() * links.length)];
+                element.css('background-image', "url('" + randomLink + "')");
+            });
+          
+            $('.shelter').click(function(e) {
+                $('.sidebar').animate({
+                    right: "-100%"
+                }, 500);
+                $('.shelter').fadeOut("slow");
+            });
+        });      
+    </script>
+</div>
+	</nav>
+
+	
+		<div class="header-background"></div>
+	
+
+	<script>
+		const name = 'post';
+		const ul = document.querySelectorAll('.nav-right ul')[0];
+		const lis = ul.querySelectorAll('li');
+
+		if (name == 'home') {
+			lis[0].classList.add('select');
+		} else {
+			for (let i = 0; i < lis.length; i++) {
+				const li = lis[i];
+				const a = li.querySelector('a');
+				if (name === a.href.split('/')[3]) {
+					li.classList.add('select');
+				}
+			}
+		}
+	</script>
+	
+	<script>
+		var element = document.querySelector('.header-background');
+		if(element) {
+			element.classList.add('custom-style');
+			var links = null;
+			if("/images/covers/analytic-geometry-without-analytic-ellipse-and-circle.webp")
+			{
+				links = "/images/covers/analytic-geometry-without-analytic-ellipse-and-circle.webp".split(',');
+			} else
+			{
+				links = "/images/random_top_img/bg.jpg".split(',');
+			}
+			var randomLink = links[Math.floor(Math.random() * links.length)];
+			element.style.backgroundImage = "url('" + randomLink + "')";
+		}
+	</script>
+
+	
+<script src="/js/plugins/breadcrumb.js"></script>
+
+	<script>
+		var menus_title = [];
+		
+			menus_title.push({home: '主页'});
+		
+			menus_title.push({categories: '类别'});
+		
+			menus_title.push({tags: '标签'});
+		
+			menus_title.push({archives: '归档'});
+		
+			menus_title.push({galleries: '相册'});
+		
+			menus_title.push({links: '链接'});
+		
+			menus_title.push({about: '关于'});
+		
+		
+			
+				postsBreadcrumb(
+					document.getElementById('breadcrumb'),
+					"类别",
+					"/categories",
+					"数学",
+					"/categories/数学"
+				);
+			
+		
+	</script>
+</header>
+
+<div class="main-wrapper">
+    <main class="post">
+        <header class="main-header">
+	
+		
+			
+				
+<link rel="stylesheet" href="/css/plugins/fancybox.css">
+
+				
+<script src="/js/plugins/fancybox.umd.js"></script>
+
+				
+<script src="/js/plugins/fancybox.js"></script>
+
+			
+			<div class="post-header-background-content">
+				<ul class="post-header-tag">
+					
+						
+							<li><a href="/tags/数学"><span>数学</span></a></li>
+						
+							<li><a href="/tags/高中数学"><span>高中数学</span></a></li>
+						
+							<li><a href="/tags/数学竞赛"><span>数学竞赛</span></a></li>
+						
+							<li><a href="/tags/解析几何"><span>解析几何</span></a></li>
+						
+							<li><a href="/tags/平面几何"><span>平面几何</span></a></li>
+						
+							<li><a href="/tags/解析几何没解析"><span>解析几何没解析</span></a></li>
+						
+							<li><a href="/tags/题集"><span>题集</span></a></li>
+						
+					
+				</ul>
+				
+				<h1>解析几何没解析：椭圆与圆</h1>
+		
+				
+					<div class="post-header-desc">
+						<svg t="1714702231661" class="icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="1154" xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="20" height="20">
+						<path
+							d="M778.24 117.76A46.08 46.08 0 0 1 824.32 163.84v430.08c0 8.4992-4.13696 16.01536-10.50624 20.6848l-0.24576 0.2048L587.5712 846.09024a35.84 35.84 0 0 1-61.48096-25.06752v-220.9792a46.08 46.08 0 0 1 46.08-46.08l200.94976-0.02048V168.96h-522.24v686.08H389.12c13.25056 0 24.1664 10.07616 25.47712 22.97856l0.12288 2.62144c0 14.1312-11.4688 25.6-25.6 25.6h-143.36A46.08 46.08 0 0 1 199.68 860.16V163.84A46.08 46.08 0 0 1 245.76 117.76h532.48z m-26.78784 487.38304h-174.16192v178.176l174.16192-178.176z m-45.19936-169.94304a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z m0-122.88a25.6 25.6 0 0 1 0 51.2H307.2a25.6 25.6 0 0 1 0-51.2h399.0528z"
+							fill="#ffffff" p-id="1155"></path>
+						</svg>
+						<p>在解析几何中，椭圆和圆是较为容易通过几何方法处理的. 通过高中或竞赛的平面几何技巧，可以大幅避免坐标计算，在减少复杂度的情况下对图形的本质有更深刻的理解. 本文搜集并分类这些几何题.</p>
+					</div>
+				
+		
+				<div class="post-header-info">
+					<svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+					xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+						<path
+							d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+							p-id="2902" fill="#ffffff"></path>
+					</svg>
+					<div class="post-header-info-author">
+						<a href="/about">SylenY</a>
+					</div>
+					
+						<div class="post-header-info-categories">
+							
+								<a href="/categories/数学">数学</a>
+							
+						</div>
+					
+					<time>2025/11/25 00:00:00</time>
+				</div>
+		
+				
+					<div class="post-header-stat">
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" width="20" height="20">
+							<path fill="#FFFFFF" d="M187.2,165.6c0,2.6-2.1,4.7-4.7,4.7H17.5c-2.6,0-4.7-2.1-4.7-4.7s2.1-4.7,4.7-4.7h165.1
+								C185.2,160.9,187.2,163,187.2,165.6z"/>
+							<path fill="#FFFFFF" d="M17.5,29.7c2.6,0,4.7,2.1,4.7,4.7v131.2c0,2.6-2.1,4.7-4.7,4.7s-4.7-2.1-4.7-4.7V34.4
+								C12.8,31.8,14.9,29.7,17.5,29.7z M77.9,91.5c1.8,1.8,1.8,4.8,0,6.6l-39.8,39.8c-1.9,1.8-4.9,1.7-6.6-0.2c-1.7-1.8-1.7-4.6,0-6.4
+								l39.8-39.8C73.1,89.6,76,89.6,77.9,91.5z M169.9,70.2c1.6,2.1,1.1,5-0.9,6.5c0,0,0,0,0,0l-64.2,48.2c-2.1,1.5-5,1.1-6.6-0.9
+								c-1.6-2.1-1.1-5,0.9-6.5c0,0,0,0,0,0l64.2-48.2C165.4,67.7,168.3,68.1,169.9,70.2L169.9,70.2z"/>
+							<path fill="#FFFFFF" d="M104.6,124.5c-1.8,1.8-4.8,1.8-6.6,0L71.6,98.1c-1.8-1.8-1.8-4.8,0-6.6c1.8-1.8,4.8-1.8,6.6,0l26.3,26.3
+								C106.4,119.6,106.4,122.6,104.6,124.5C104.6,124.4,104.6,124.4,104.6,124.5z"/>
+						</svg>
+		
+						
+							
+<script src="/js/plugins/wordCount.js"></script>
+
+							<p class="post-count">文字数：---</p>
+						
+		
+						
+							<p id="busuanzi_container_page_pv" style='display:none;'>阅读数：<span id="busuanzi_value_page_pv"></span></p>
+						
+					</div>
+				
+			</div>
+		
+	
+</header>
+        <div class="post-content article-container">
+            <article class="post-content-info">
+                <h2 id="反演类"><a href="#反演类" class="headerlink" title="反演类"></a>反演类</h2><p><strong>例1</strong> $\odot C:(x-2)^2+y^2=4$，直线 $l_1:x+y+4=0$. $P$ 在 $l_1$ 上，以 $PC$ 为直径作 $\odot O$，求 $\odot O$ 过的所有定点.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/ie1.webp" alt=""></p>
+<p>以 $\odot C$ 为反演圆，作反演变换：<br>$$P\rightarrow P'\ \odot O\rightarrow c'\ l_1\rightarrow \odot O_1$$<br>所以 $P'$ 在 $\odot O_1$ 上. $c'\bot CP'$. 显然 $c'$ 过 $C$ 关于 $\odot O_1$ 的对径点 $M$. 故 $\odot O$ 过 $M$ 的反点.易得 $CM:y=x-2$，联立得 $M'(-1,-3)$.</p>
+<p>故 $\odot O$ 过定点 $(2,0),(-1,-3)$.</p>
+<blockquote>
+<p>得到答案后，反演并非最简证法. 但它可以在不使用解析方法的情况规避看出定点在 $l_1$ 上的注意力.</p>
+</blockquote>
+<p><strong>例2</strong> 圆 $O_1,O_2$ 与 $x$ 轴相切且两圆圆心与原点共线. 两圆交于点 $P$，求 $P$ 到直线 $y=2x-8$ 的距离最小值.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/ie2.webp" alt=""></p>
+<p>设 $\odot O_1$ 与 $x$ 轴切于 $M$，$\odot O_2$ 与 $x$ 轴切于 $N$. 以原点为反演中心，$OM\cdot ON$ 为反演幂作反演变换，则有<br>$$M\rightarrow N,N\rightarrow M$$<br>故<br>$$\begin{gather*}\odot O_1 \rightarrow \odot O_2\\ \odot O_2 \rightarrow \odot O_1\end{gather*}$$<br>于是 $P\rightarrow P$，有 $OP^2=OM\cdot ON=6,OP=\sqrt{6}$.所以 $P$ 在以原点为圆心，半径为 $\sqrt6$ 的圆上.</p>
+<p>所求最小值为 $\frac 8 5 \sqrt 5-\sqrt6$.</p>
+<p><strong>例3</strong> 已知圆 $C:x^2+y^2=4$ 与 $x$ 轴正半轴交于 $D$，从直线 $l:x+y=4$ 上任一动点 $P$ 向圆作切线，切点分别为 $A$，$B$，过点 $(0,1)$ 作直线 $AB$ 的垂线，垂足为 $H$，求 $DH$ 的最小值.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/ie3.webp" alt=""></p>
+<p>连 $OP$ 交 $AB$ 与 $P'$，则 $P'$ 是 $P$ 关于 $\odot C$ 的反演点. 故 $P'$ 轨迹为 $l$ 关于 $\odot C$ 的反形 $(x-\frac12)^2+(y-\frac12)^2=\frac12$. 由 $OP \bot AB$，可得 $AB$ 过 $O$ 的对顶点 $M(1,1)$. 又 $C(0,1)\bot AB$，有 $H$ 在以 $CM$ 为直径的圆上.</p>
+<p>故 $DH\ge \frac{\sqrt{13}-1}2$.</p>
+<h2 id="调和类"><a href="#调和类" class="headerlink" title="调和类"></a>调和类</h2><p><strong>例1</strong> 椭圆 $C:\frac{x^2}4+\frac{y^2}9=1$ 的左顶点为 $A$. 过点 $R(-2,3)$ 作直线 $l$ 交 $C$ 于 $P,Q$ 两点， $AP,AQ$ 交 $y$ 轴于 $M,N$. 求证：$MN$ 的中点在定点上.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/he1.webp" alt=""></p>
+<p>作仿射变换 $(x,y)\rightarrow(\frac{x}2,\frac{y}3)$， 使 得 $C\rightarrow\odot O:x^2+y^2=1,R\rightarrow R'(-1,1),A\rightarrow A'(-1,0)$. 作 $\odot O$ 顶点 $D(0,1)$，显然 $R'D,R'A'$ 是 $\odot O$ 的两条切线，所以四边形 $A'PDQ$ 是调和四边形，$A'R',A'M,A'D,A'N$ 是调和点列. 又 $A'R'\,//\,MN$，故 $D$ 是 $MN$ 中点.</p>
+<p>回到原图，$MN$ 中点为定点 $(0,3)$.</p>
+<p><strong>例2</strong> 设 $P$ 是直线 $x=4$ 上异于 $(4,0)$ 的任意一点，斜率存在的 $AB$ 是经过椭圆 $\frac{x^2}4+\frac{y^2}3=1$ 右焦点 $F$ 的一条弦，记直线 $PA,PF,PB$ 的斜率依次为 $k_1,k_2,k_3$，求 $\frac{k_1+k_3}{k_2}$.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/he2.png" alt=""></p>
+<p>延长 $BA$ 交 $x=4$ 于 $M$，因为 $x=4$ 是 $F(1,0)$ 的极线，有 $F,M$ 共轭，则 $B,F,A,M$ 为调和点列，$PB,PF,PA,PM$ 为调和线束. 又 $x=4$ 垂直于 $x$ 轴，故有 $\frac{k_1+k_3}{k_2}=2$.</p>
+<blockquote>
+<p>最后一步的证明是直截了当的，留给读者作为习题.</p>
+</blockquote>
+<h2 id="曲线系类"><a href="#曲线系类" class="headerlink" title="曲线系类"></a>曲线系类</h2><p><strong>例1</strong> 已知双曲线 $C:x^2-\frac{y^2}{16}=1$，在 $x=\frac12$ 上取一点 $F$，过 $F$ 作直线 $l_0,l_1$ 分别交 $C$ 于 $A,B$ 和 $C,D$，有 $AF\cdot BF=CF\cdot DF$. 求 $k_{l_0}+k_{l_1}$.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/ce1.webp" alt=""></p>
+<p>设 $l_0:y-k_0x+b_0=0,l_1:y-k_1x+b_1=0$，则 $l_0\cup l_1:(y-k_0x+b_0)(y-k_1x+b_1)=0$. 故过 $A,B,P,Q$ 的二次曲线系为 $D:\alpha (y-k_0x+b_0)(y-k_1x+b_1)+\beta(x^2-\frac{y^2}{16}-1)=0$.由圆幂定理，$A,B,P,Q$ 四点共圆，则存在 $\alpha,\beta$ 使得 $D$ 中 $x^2,y^2$ 项系数相等，且 $xy$ 项系数为 $0$，此时显然 $\alpha\neq 0$，因此 $k_0+k_1=0$.</p>
+<h2 id="面积类"><a href="#面积类" class="headerlink" title="面积类"></a>面积类</h2><p><strong>例1</strong> 设抛物线 $C:y=\frac{x^2}4$，过点 $F(0,1)$ 作两条互相垂直的直线分别交抛物线于 $A,B$ 和 $D,E$，且 $A,E$ 在 $y$ 轴右侧，$B,D$ 在 $y$ 轴左侧. 作 $AB$ 中点 $M$ 和 $DE$ 中点 $N$. $AE$ 与 $BD$ 交于 $P$. 求三角形 $MPN$ 面积最小值.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/ae1.png" alt=""></p>
+<p>作 $BE$ 中点 $H$，由中位线可得 $MH\,//\,AP,NH\,//\,DP$. 于是 $S_{\triangle{MHP}}=S_{\triangle {MHE}},S_{\triangle{NHP}}=S_{\triangle{NHB}}$. 因此 $S_{\triangle{MPN}}=S_{\triangle{MFN}}+S_{\triangle{NHB}}+S_{\triangle{MHE}}=S_{四边形MNEB}=\frac12NE\cdot BM=\frac18AB\cdot DE$.</p>
+<p>设 $AB:y=k_1x+1,DE:y=k_2x+1,k_1k_2=-1$. 联立 $C$ 和 $AB$，得 $X_A+X_B=4k_1,X_AX_B=-4$. 则 $AB=\sqrt{k_1^2+1}(X_A-X_B)=\sqrt{(k_1^2+1)[(X_A+X_B)^2-4X_AX_B]}=4(k_1^2+1)$. 同理得 $DE=4(k_2^2+1)$. 故 $S_{\triangle{MPN}}=2(k_1^2+1)(k_2^2+1)=2(k_1^2k_2^2+k_1^2+k_2^2+1)=2(k_1^2+\frac1{k_1^2}+2)=2[(k_1-\frac1{k_1})^2+4]\ge8$.</p>
+<p>取 $k_1=1,k_2=-1$，面积为 $8$，故 $S_{\triangle{MPN}}$ 最小值为 $8$.</p>
+<blockquote>
+<p>注意不到面积转化的话，强行计算也是可以得出结果的. 技巧如下：首先由极点极线结论有 $Y_P=-1$. 取 $Q(0,-1)$，注意在 $MN$ 斜率大于 $0$ 的时候，$X_P>0$，反之 $X_P<0$，因此总有 $S_{\triangle{MPN}}\ge S_{\triangle{MQN}}$. 改为求 $MQN$ 面积极小值可以极大简化计算.</p>
+<p>原题抛物线为 $y^2=4x$，改为竖向是为了便于坑害初三的朋友们.</p>
+</blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><strong>例1</strong> 椭圆 $C:\frac{x^2}{16}+\frac{y^2}{12}=1$ 的左顶点为 $A$，右焦点为 $B$. 椭圆上有一点 $C$，$AC$ 与 $l_1:x=8$ 交于 $M$，过 $A$ 作 $MF$ 的平行线交 $CF$ 于 $R$. $x$ 轴上是否存在定点 $G$，使得 $\angle ARG=\angle FRM$ 恒成立？若有，求出 $G$ 坐标. 若无，请说明理由.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/oe1.webp" alt=""></p>
+<p>注意到 $l_1$ 是 $C$ 的右准线，设 $l_0$ 与 $x$ 轴交于 $N$. 作 $CB\bot l_0$，有 $CB=2CF$. 因为 $AF=FN$，由相似有 $DB=DC=CF$，故 $\angle CFD=\angle CDF=\angle MFN$. 因为 $AR\,//\,MF$，$\angle ARF=\angle RFM=\angle MFN=\angle RAF$，所以 $AF=FR=FN$，故 $R$ 在 $F$ 为圆心，$AF$ 为半径的圆上.由角平分线和切线，$\angle MRN=\angle MNR=\angle RAN=\angle ARF$，所以 $\angle ARN=\angle FRM$. 因此定点 $G$ 为 $N(8,0)$.</p>
+<blockquote>
+<p>本做法需要注意到 $R$ 的轨迹，这几乎是不可能的，因此只能作为知晓答案后炫技式的娱乐. 但是证明过程的确相当漂亮，其中通过准线得出角平分线的方法是较为一般的，可以体会一下.</p>
+</blockquote>
+<p><strong>例2</strong> 椭圆 $C:\frac{x^2}8+\frac{y^2}2=1$ 过点 $A(2,1)$，$P,Q$ 是 $C$ 上的两个动点，使 $\angle PAQ$ 的角平分线垂直于 $x$ 轴，证明：$PQ$ 斜率为定值，并求出该值.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/oe2.webp" alt=""></p>
+<p>作仿射变换 $(x,y)\rightarrow (\frac x2,y)$，则 $C\rightarrow \odot O:x^2+y^2=1,A\rightarrow A'(1,1)$.作 $M(1,-1)$，则 $A'M$ 平分 $\angle PAQ$，有 $\overset{\frown}{PM}=\overset{\frown}{QM}$，因而 $OM\bot PQ$，所以 $k_{PQ}=1$.<br>回到原图，$k_{PQ}$ 为定值 $\frac12$.</p>
+<p><strong>例3</strong> 椭圆 $C:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 内接四边形 $ABCD$ 对角线 $AC,BD$ 交于点 $P(1,1)$，且 $AP=2CP,BP=2DP$. 已知 $k_{AB}=-\frac14$，求椭圆的离心率.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/oe3.webp" alt=""></p>
+<p>作仿射变换 $(x,y)\rightarrow(\frac x a,\frac y b)$，使得 $C\rightarrow \odot O:x^2+y^2=1,P\rightarrow P'(\frac1a,\frac1b),k_{AB}'=\frac a b k_{AB}=-\frac a {4b}$.因为 $\frac{AP'}{CP'}=\frac{BP'}{DP'}=2$，显然 $AC,BD$ 关于 $OP$ 对称. 故有 $OP'\bot AB$，从而 $k_{AB}'\cdot k_{OP}=-1$，解得 $a=2b$，故椭圆离心率为 $\frac{\sqrt3}2$.</p>
+<p><strong>例4</strong> 如图，圆 $O:x^2+y^2=4$ 的左右顶点为 $A,B$，过圆上一点 $C$ 作圆的切线交过 $A,B$ 的切线于点 $D,E$. $AE，BD$ 交于点 $M$，求 $M$ 点轨迹.</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/oe4.webp" alt=""></p>
+<p>解：因为 $AB=2OB=2BA$，有 $k_{AE}=\frac12k_{OE},k_{BD}=\frac12k_{OD}$，所以 $k_{AE}\cdot k_{BD}=\frac14k_{OE}\cdot k_{OD}=-\frac14$.</p>
+<p>由椭圆第三定义不难得到 $M$ 轨迹为 $\frac{x^2}4+y^2=1$.</p>
+<p><strong>例5</strong> 椭圆 $C:\frac{x^2}2+y^2=1$ 的左焦点为 $F_1$，直线 $y=kx$ 交 $C$ 与 $A,B$. 连结并延长 $AF_1,BF_1$ 交 $C$ 与 $D,E$. 求 $DE$ 斜率 $k_{DE}$ 与 $k$ 的关系.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/oe5.webp" alt=""></p>
+<p>作仿射变换 $(x,y)\rightarrow(\frac{x}{\sqrt2},y)$，则 $C\rightarrow\odot O(x^2+y^2=1)$，$F_1\rightarrow F_1'(-\frac{\sqrt2}2,0)$.<br>设 $DE$ 交 $x$ 轴与 $M$，由坎迪定理有 $\frac1{MF_1'}-\frac1{r-OF_1'}=\frac1{OF_1'}-\frac1{r+OF_1'}$.所以 $MF_1'=\frac{\sqrt2}6$.设 $AB,DE$ 交于 $C$，则 $C$ 在 $F_1$ 的极线 $x=-\sqrt2$ 上. 设 $C(-\sqrt2,y_c)$，得 $k'=\frac{-y_c}{\sqrt2},k_{DE}'=\frac{-y_c}{\frac{\sqrt2}3}$，所以 $k_{DE}'=3k'$.</p>
+<p>由于仿射变换前后直线斜率比不变，有 $k_{DE}=3k$.</p>
+<p><strong>例6</strong> 已知圆 $C_1:(x-1)^2+y^2=2$，圆 $C_2:(x-a)^2+(y-\sqrt2)^2=12$. 若圆 $C_1$ 上存在两点 $A,B$，且圆 $C_2$ 上恰好存在一点 $P$，使得四边形 $OAPB$ 为矩形，求实数 $a$ 的取值集合.</p>
+<p>解：</p>
+<p><img src="/images/illustrations/analytic-geometry-without-analytic-ellipse-and-circle/oe6.webp" alt=""></p>
+<p>延长 $AO,BO$ 与圆 $C_1$ 交于点 $A',B'$. 取 $AB$ 中点 $P'$，$A'B'$ 中点 $C$. 连 $CP'$. 取 $AA',BB'$ 中点 $E,D$，易知 $C'P'$ 中点与 $ED$ 中点重合 (都为四边形 $ABA’B’$ 重心) ，记为 $M$. 由垂径定理和 $AO\bot OB$，四边形 $OEC_1D$ 为长方形. 故 $M$ 为 $CC_1$ 中点.又 $CP'^2=(\frac{AA'}2)^2+(\frac{BB'}2)^2=AE^2+BD^2=AC_1^2-C_1E^2+BC_1^2-C_1D^2=2r_{C_1}^2-ED^2=2r_{C_1}^2-CC_1^2=3$. 所以 $MP'=\frac{\sqrt3}2$. 即 $P'$ 在 $M$ 为圆心，$\frac{\sqrt3}2$ 为半径的圆上.</p>
+<p>因为 $CP'=PP'$，故 $P$ 在 $C_1$ 为圆心，$\sqrt3$ 为半径的圆上.</p>
+<p>由于 $C_2$ 恰有一个点 $P$ 满足条件，有 $C_2$ 与 $C_1$ 相切. 易得 $a\in\{-4,0,2,6\}$.</p>
+
+            </article>
+            
+	<aside class="rightside">
+	
+		<div class="rightside-button" id="js-aside">
+			<span>
+				<img no-lazy src="/images/icon/aside.png" class="rightside-button-icon" alt="Icon">
+			</span>
+		</div>
+		<script>
+			$("#js-aside").click(function () {
+				onShowAsideButton();
+			});
+		</script>
+	
+	<div class="rightside-button" id="js-toggle_theme">
+		<span>
+			<img no-lazy src="/images/icon/toggle_theme.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	
+<script src="/js/plugins/goto_position.js"></script>
+
+	
+	<div class="rightside-button" id="js-go_top">
+		<span>
+			<img no-lazy src="/images/icon/go_top.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+	<div class="rightside-button" id="js-go_bottom">
+		<span>
+			<img no-lazy src="/images/icon/go_bottom.png" class="rightside-button-icon" alt="Icon">
+		</span>
+	</div>
+
+	<script>
+		setToggleThemeButtonListener();
+	</script>
+	<script>
+		$('#js-go_top')
+		.gotoPosition( {
+			speed: 300,
+			target: 'top',
+		} );
+		$('#js-go_bottom')
+		.gotoPosition( {
+			speed: 300,
+			target: 'bottom',
+		} );
+	</script>
+</aside>
+
+
+<div class="post-bottom">
+    
+        <div class="post-paging">     
+            <div class="post-paging-last">
+                
+                    <a href="/the-legend-of-minecraft/">
+                        上一篇：我的传说
+                    </a>
+                
+            </div>
+            <div class="post-paging-next">
+                
+                    <a href="/transformation/">
+                        下一篇：变形记
+                    </a>
+                
+            </div>
+        </div>
+    
+    
+    
+        
+    
+</div>
+        </div>
+    </main>
+    
+        <aside class="main-aside">
+    
+<script src="/js/widgets/aside.js"></script>
+
+    <script>
+        showAside();
+    </script>
+
+    <div class="aside-top">
+        <div class="aside-top-about aside-card">
+            <a href="/about" class="aside-top-about-portrait">
+                <img no-lazy src="/images/icon/favicon.webp" alt="Q">
+            </a>
+            <div class="aside-top-about-info">
+                <span class="author"> SylenY</span>
+                <span class="description">所有的回忆都是潮湿的。</span>
+            </div>              
+            <div class="aside-top-about-site">
+                <a href="/categories" class="aside-top-about-site-item">
+                    <span class="title">类别</span>
+                    <span class="count">4</span>
+                </a>
+                <a href="/tags" class="aside-top-about-site-item">
+                    <span class="title">标签</span>
+                    <span class="count">45</span>
+                </a>
+                <a href="/archives" class="aside-top-about-site-item">
+                    <span class="title">归档</span>
+                    <span class="count">17</span>
+                </a>
+            </div>
+            <div class="aside-top-about-contact">
+                
+                    
+                        <a target="_blank" rel="noopener" href="https://github.com/SylenY">
+                            <img no-lazy src="/images/bottom_icon/github.webp" alt="Quieter">
+                        </a>
+                    
+                
+            </div>
+        </div> 
+
+        
+            <div class="aside-top-series aside-card">
+                <ol class="aside-top-series-content">
+                    
+                    
+                    
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        
+                                        <li class="series-item active">
+                                            <a class="series-link active" target="_blank" rel="noopener" href="//analytic-geometry-without-analytic-ellipse-and-circle/">
+                                                <span class="text">解析几何没解析：椭圆与圆</span>
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        <li class="series-item">
+                                            <a class="series-link" target="_blank" rel="noopener" href="//analytic-geometry-without-analytic-hyperbola-theory/">
+                                                <span class="text">解析几何没解析：双曲线（理论篇）</span>
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        <li class="series-item">
+                                            <a class="series-link" target="_blank" rel="noopener" href="//analytic-geometry-without-analytic-hyperbola/">
+                                                <span class="text">解析几何没几何：双曲线（实践篇）</span>
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    
+                </ol>
+                <div class="aside-top-series-title">
+                    <h1>
+                        <a href="/tags/解析几何没解析">标签：解析几何没解析</a>
+                    </h1>
+                    <span id="serial-number">1/3</span>
+                </div>
+            </div>
+            <script>
+                activeSeriesItem();
+            </script> 
+        
+    </div>
+
+    <div class="aside-bottom">
+        
+            <script>
+                
+                    const tocCollapsed = true;
+                
+                
+                    const tocDepth = 6;
+                
+                var headerString = '';
+                for (let i = 1; i <= tocDepth; i++) {
+                    if (i === 1) {
+                        headerString += 'h1';
+                    } else {
+                        headerString += ', h' + i;
+                    }
+                }
+                hbeToc();
+            </script>
+            <div class="aside-bottom-toc aside-card">
+                <div class="aside-bottom-toc-title">
+                    <h1>目录</h1>
+                    <span class="toc-percentage"></span>
+                </div>
+                <ol class="aside-bottom-toc-content"></ol>
+            </div>
+        
+    </div>
+</aside>
+    
+</div>
+		<footer>
+	<div class="content">
+		
+			<span>©2024-2026&nbsp;By&nbsp;<a href="/about">SylenY</a>.</span>
+		
+		<span><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> theme by <a target="_blank" rel="noopener" href="https://github.com/GZ-Metal-Cell/hexo-theme-quieter">Quieter</a>.</span>
+		
+	</div>
+
+	
+<script src="/js/plugins/ref.js"></script>
+
+	
+<script src="/js/plugins/highlight_tools.js"></script>
+
+	<script>
+		var copyIcon = "/images/icon/copy.png";
+		var closeCodeBlockIcon = "/images/icon/close_code_block.png";
+		var highlightShrink = "";
+		var HighlightHeightLimit = "";
+	</script>
+	
+	<!-- Analytics -->
+
+    
+        <!-- Busuanzi Analytics -->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+
+
+	
+
+	
+		
+			
+<script src="/js/plugins/katex.js"></script>
+
+			<script>
+				const katex_css = '/js/plugins/katex/katex.min.css';
+				const katex_js = '/js/plugins/katex/katex.min.js';
+				const katex_auto_render = '/js/plugins/katex/auto-render.min.js';
+			</script>
+			<link rel="stylesheet" href="/js/plugins/katex/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+			<script defer src="/js/plugins/katex/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+			<script defer src="/js/plugins/katex/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+			
+				<link href="/css/plugins/copy-tex.css" rel="stylesheet">
+				<script src="/js/plugins/copy-tex.js"></script>
+			
+		
+	
+
+    
+		
+<script src="/js/plugins/replaceSpacesWithNbsp.js"></script>
+
+	
+
+	
+	
+	
+		<script>
+			if (typeof init === 'function') {
+				init();
+			}
+		</script>
+	
+
+	
+		
+	
+
+	
+
+	<!--
+		
+<script src="/js/plugins/jquery.pjax.min.js"></script>
+
+		<script>
+			$(document).pjax('a[target!=_blank]', 'main', {
+				fragment: 'main',
+				timeout: 8000
+			});
+
+			$(document).on('pjax:complete', function() {
+			});
+		</script> 
+	-->
+	<script>
+		console.log('\n %c Hexo-Quieter 主题 %c https://github.com/GZ-Metal-Cell/hexo-theme-quieter \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+	</script>
+</footer>
+	</body>
+
+	<!-- Hexo-Quieter 主题  https://github.com/GZ-Metal-Cell/hexo-theme-quieter -->
+</html>
+
